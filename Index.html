@@ -220,6 +220,17 @@ var url = "Indicateurs2.xlsx";
             console.log(test);
             console.log("valeurs[0] = " + valeurs[0]);
             valeurs  = transformation_value_json_to_table(test)
+          var canvas = document.getElementsByClassName('bar_graph');
+for (var i = 0 ; i < canvas.length ; i++)
+{
+    var ctx = canvas[i].getContext('2d');
+    /*var index2 = 0;
+    var x1 = test[i];
+    var x2 = parseFloat(x[x1])+70;
+    var y2 = y[x1];*/
+    dessine_graph(valeurs);
+}
+
         }
         
         var z = 0;
