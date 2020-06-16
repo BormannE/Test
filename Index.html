@@ -187,6 +187,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
 <script type="text/javascript">
 //Recherche des valeurs pour les indicateurs
+  var x1 = 150;
+var y1 = 144;
+var x2 = 208;
+var y2 = 134
+
+var indice_tab = 0;
+var aiguilleX = ["87","87.5","89","92","95","103","113","123","133","143","152","161","170","179","188","199","202","205","208","213"]
+var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","82","83","87","93","104","114","124","134","144"]
+
+  var tab = [65,225];
+  var tab2 = [33,175];
+  var max = ["35","70"];
+  var inter = [10,30];
+  var rayon = 100;
 var url = "Indicateurs2.xlsx";
 var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
@@ -570,22 +584,9 @@ function calcul_longueur(x1,y1,x2,y2)
 {
   console.log("L = " + Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1))))
 };
-var x1 = 150;
-var y1 = 144;
-var x2 = 208;
-var y2 = 134
-calcul_longueur(x1,y1,x2,y2)
-var indice_tab = 0;
-var aiguilleX = ["87","87.5","89","92","95","103","113","123","133","143","152","161","170","179","188","199","202","205","208","213"]
-var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","82","83","87","93","104","114","124","134","144"]
 
 function dessine_graph(valeurs,i)
 {
-  var tab = [65,225];
-  var tab2 = [33,175];
-  var max = ["35","70"];
-  var inter = [10,30];
-  var rayon = 100;
     //dessin du quart rouge
     ctx.beginPath();
     ctx.strokeStyle = 'red';
