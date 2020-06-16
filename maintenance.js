@@ -1,4 +1,5 @@
 var url = "Indicateurs2.xlsx";
+console.log(url);
 var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
