@@ -248,7 +248,7 @@ for (var i = 0 ; i < canvas.length ; i++)
     var x1 = test[i];
     var x2 = parseFloat(x[x1])+70;
     var y2 = y[x1];*/
-    dessine_graph(valeurs,l);
+    dessine_graph(valeurs,l,ctx);
     l++;
 }
         }
@@ -587,7 +587,7 @@ function calcul_longueur(x1,y1,x2,y2)
   console.log("L = " + Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1))))
 };
 
-function dessine_graph(valeurs,i)
+function dessine_graph(valeurs,i,ctx)
 {
   console.log("Est ce quela valeur[i] s'affiche ?" + valeurs[i]);
     //dessin du quart rouge
