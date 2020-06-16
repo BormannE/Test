@@ -264,25 +264,21 @@ var i = 0;
 avis = valeurs[8];
 avis_ouverts = valeurs[9];
 avis_fermés = valeurs[10];
-          proportion();
 dessine_bar_graph(i,ctx);
 i++;
           avis = valeurs[11];
 avis_ouverts = valeurs[12];
 avis_fermés = valeurs[13];
-          proportion();
           dessine_bar_graph(i,ctx);
 i++;
 avis = valeurs[14];
 avis_ouverts = valeurs[15];
 avis_fermés = valeurs[16];
-          proportion();
           dessine_bar_graph(i,ctx);
 i++;
           avis = valeurs[17];
 avis_ouverts = valeurs[18];
 avis_fermés = valeurs[19];
-          proportion();
           dessine_bar_graph(i,ctx);
         }
   oReq.send();
@@ -343,6 +339,7 @@ function proportion()
 
 function dessine_bar_graph(i,ctx)
 {
+  proportion();
   ctx.beginPath()
   ctx.font = '0.9vw serif';
   ctx.fillStyle = 'black';
