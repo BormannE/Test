@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC>
+<html>
+<head>
+  <title>Maintenance TV</title> 
+  <meta name="description" content="TV Maintenance"/>    
+  <meta name="keywords" content="Maintenance, maintenance, html, css, javascript"/>    
+  <meta name="author" content="Bormann Enzo"/>    
+  <meta charset="utf-8"/>    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+  <link rel="stylesheet" href="maintenance.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+<!--<a href="file:///W:/ENZO%20Licence%20Informatique/Classeur1.xlsx">Lien</a>-->
+
+<!-- Contenu principal -->
+<div class="head"><img src="images/bonhomme.jpg" alt="Logo" id="logo"><h1 id="TV">TV Maintenance</h1>
+</div>
+<div class="aside_gauche">
+  <h1 class="NoMargin">Ordres</h1>
+  <div class="noms">
+    <p>U1</p>
+    <p>U2</p>
+    <p>U3</p>
+    <p>LPV</p>
+  </div>
+  <canvas id="canvas" class="bar_graph2"></canvas>
+  <div class="legende">
+    <p style="color:orange">Hors délais</p>
+    <p style="color:green">Avis ouverts</p>
+  </div>
+  <div class="noms">
+    <p>Nombre pannes ouvertes</p>
+    <p>Nombre avis ouverts sans ordres</p>
+  </div>
+  <div class="baro">
+    <canvas id="canvas1" class="bar_graph"></canvas>
+    <canvas id="canvas2" class="bar_graph"></canvas>
+  </div>
+  <h1 class="h1SansMargin">Indicateurs maint LPV</h1>
+  <div class="baro">
+    <canvas id="canvas3" class="bar_graph"></canvas>
+    <canvas id="canvas4" class="bar_graph"></canvas>
+  </div>
+  <h1 class="h1SansMargin">Indicateurs maint U1</h1>
+  <div class="baro">
+    <canvas id="canvas5" class="bar_graph"></canvas>
+    <canvas id="canvas6" class="bar_graph"></canvas>
+  </div>
+  <h1 class="h1SansMargin">Indicateurs maint U2</h1>
+  <div class="baro">
+    <canvas id="canvas7" class="bar_graph"></canvas>
+    <canvas id="canvas8" class="bar_graph"></canvas>
+  </div>
+  <h1 class="h1SansMargin">Indicateurs maint U3</h1>
+  </div>
+<div class="navigation">
+<ul class="nav2">
+    <li class="nav"><a class="dif" href="http://delphes/fr/portailSALM/Pages/Default.aspx"><p>Acceuil Portail</p></a>
+    <li class="nav"><a class="dif" href=""><p>Les packs</p></a>
+    <li class="nav"><a class="dif" href=""><p>Les indicateurs</p></a>
+    <li class="nav"><a class="dif" href=""><p>REX/LP</p></a>
+    <li class="nav"><a class="dif" href=""><p>Infos pratiques</p></a>
+</ul>
+</div>
+<div class="arrivant">
+  <div id="text_vertical">ARRIVANT</div>
+  <ul>
+  <ul>
+    <li id="NA_Site">Site : U3</li>
+    <li id="NA_Date">Date d'éntrée : 01.06.2020</li>
+    <li id="NA_Nom">Nom : BORMANN</li>
+    <li id="NA_Prenom">Prénom : Enzo</li>
+    <li id="NA_Age">Age : 19</li>
+    <li id="NA_Metier">Métier : Stagiaire</li>
+    <li id="NA_Passion">Passion : F1, Tennis, Natation</li>
+  </ul>
+  </ul>
+  <a href="video.html"><img src="images/portrait.jpg"></a>
+</div>
+<div class="page">
+<div class="news">
+<div class="slideshow-container" id="slideshow">
+
+  <!-- image avec le nombre dimage en tout -->
+  <div class="mySlides fade">
+    <img src="images/REX.png" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/REX2.png" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img width="50vw" src="images/LP2.png" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/test_ethernet.jpg" style="width:100%">
+  </div>
+
+  <!-- Boutons souivant et précédents -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- Les poits qui permettent d'accéder aux autres photos -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div> 
+  <!--<img style="display:none" src="transparent-arrow-hi2.png" id="fleche_gauche"><img src="" id="image1"><img style="display:none" src="transparent-arrow-hi.png" id="fleche_droite">
+  </div>-->
+</div>
+<div class="aside_droit">
+  <h1><a href="file:///\\vsm-file-1\srv_files\DP_Maintenance">Les essentiels maintenance</a></h1>
+  <p>Maintenances</p>
+  <div class="enligne">
+    <p><a href="file:///\\vsm-file-1\srv_files\DPP\Atelier Maintenance">U1 et U3</a></p>
+    <p><a href="file:///\\vsm-file-1\srv_files\DPM\07 Ateliers Maitenance\4 Atelier Maintenance SU2">U2</a></p>
+    <p><a href="file:///\\vsm-file-1\srv_files\DPM\07 Ateliers Maitenance\3 Atelier Maintenance LVR">LPV</a></p>
+  </div>
+  <!--<a class="info" id="organigramme" href="Organigramme.html"><img  src="images/ORGANIGRAMME.jpg"></a>
+  <a class="info" id="planning" href="Planning.html"><img  src="images/Planning.jpg"></a>
+  <a class="info" id="documents" href="doc.html"><img  src="images/LP.png"></a>
+  -->
+  <a href="file:///\\vsm-file-1\srv_files\DP_Sécurité"><img src="images/Securite.jpg"></a>
+  <a href="file:///\\vsm-file-1\srv_files\DDI\0 Direction\3 Documents de Gestion de Projets\2 CDC et Référentiels de référence"><img src="images/CDC.jpg"></a>
+  <!--<p>Listing avis</p>
+  <p>Doc technique</p>
+  <p>Doc machines</p>-->
+  <a href="file:///\\vs2-maint-file\Maint\Documents SPS\DMP"><img src="images/"></a>
+  <a href="file:///\\vs2-maint-file\Maint\Documents SPS\DMP Tutoriels Vidéos"><img src="images/LP.png"></a>
+  <a href="file:///\\vs2-maint-file\Maint\Documents SPS\Création"><img src="images/"></a>
+  
+  <!--<a href="file:///\\vsm-file-1\srv_files\DP_TPM\Fonctionnement TPM "><img src="images/TPM.jpg"></a>
+  <p><a href="https://vsmprogtwsql.salm.int:43000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/Fiorilaunchpad.html">FIORI</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DP_Maintenance\4 Rapports GMAO & Gestion OTs\Avis Ordres Maintenance\Monté">Liste d'OT monté</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DP_Maintenance\4 Rapports GMAO & Gestion OTs\Avis Ordres Maintenance\Panneaux">Liste d'OT panneaux</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DPP\Atelier Maintenance\1 Organisation MPP\3 Poste Hotline\SU1\Tableau UET\En cours">Cahier de consigne U1</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DPM\07 Ateliers Maitenance\4 Atelier Maintenance SU2\1 Organisation\2 Poste Hotline\Cahier de consignes 2020">Cahier de consigne U2</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DPP\Atelier Maintenance\1 Organisation MPP\3 Poste Hotline\SU3\Cahier de consignes 2020">Cahier de consigne U3</a></p>
+  <p><a href="file:///\\vsm-file-1\srv_files\DPM\07 Ateliers Maitenance\3 Atelier Maintenance LVR\Organisation\Consignes">Cahier de consigne LPV</a></p>
+  <p><a href="http://vsm-maint-app/project.asp?loadbalancing%20no">SPV Usine</a></p>-->
+</div>
+</div>
+<!--<input type="file" id="fileUpload" files="Salut"/>
+    <input type="button" id="upload" value="Upload" onclick="UploadProcess()" />
+    <br/>
+
+    <div id="ExcelTable"></div>-->
+<!--<div class="pied_de_page">
+  <h1>Les différents packs</h1>
+  <ul>
+    <li>HOTLINE <ul>
+      <li>FIORI</li>
+      <li>Fichier Pannes Longues</li>
+      <li>Extraction BI</li>
+      <li>etc ...</li>
+    </ul>
+    </li>
+    <li>Magasinier<ul>
+      <li>Dossier fourniseur</li>
+      <li>etc ...</li>
+    </ul>
+    </li>
+    <li>Formation<ul>
+      <li>Mise à jour documents</li>
+      <li>Questionnaire</li>
+      <li>Enquête de satisfaction en ligne</li>
+      <li>Nouveaux QCM en ligne</li>
+      <li>etc ...</li>
+    </ul>
+    </li>
+    <li>etc ...</li>
+  </ul>
+</div>-->
+
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
+<script type="text/javascript" src="maintenance.js"></script>
+</html>
