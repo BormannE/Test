@@ -198,7 +198,7 @@ var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","8
 
   var tab = [65,225];
   var tab2 = [33,175];
-  var max = ["35","70"];
+  var max = ["35","75"];
   var inter = [10,30];
   var rayon = 100;
 var url = "Indicateurs2.xlsx";
@@ -652,7 +652,7 @@ function dessine_graph(valeurs,i,ctx)
             indice_tab = 17
           else if (valeurs[i] <= 32)
             indice_tab = 18
-          else if (valeurs[i] <= 35)
+          else
             indice_tab = 19
         }
         else
@@ -674,7 +674,7 @@ function dessine_graph(valeurs,i,ctx)
           indice_tab = 17
         else if (valeurs[i] <= 71)
           indice_tab = 18
-        else if (valeurs[i] <= 75)
+        else
           indice_tab = 19
       }
     }
