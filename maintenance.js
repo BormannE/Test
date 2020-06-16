@@ -137,10 +137,8 @@ function dessine_bar_graph()
     ctx.beginPath();
     ctx.strokeStyle = couleur[j];
     ctx.lineTo(positionX[i], hauteur[j]);
-    console.log(positionX[i])
     ctx.stroke();
     ctx.lineTo(positionX[i]+40,hauteur[j]);
-    console.log(positionX[i])
     ctx.stroke();
     ctx.lineTo(positionX[i]+40,hauteurDep[j]);
     ctx.stroke();
