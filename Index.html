@@ -186,6 +186,7 @@
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
 <script type="text/javascript">
+//Recherche des valeurs pour les indicateurs
 var url = "Indicateurs2.xlsx";
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
@@ -216,15 +217,15 @@ var url = "Indicateurs2.xlsx";
             console.log(test2);
             var test = JSON.stringify(test2);
             console.log(test);
-            essai(test);
+            transformation_value_json_to_table(test);
         }
         
         var z = 0;
-        var tab2 = [[],[]];
+        var valeurs = []; //OU [[],[]]
         var PAU1;
         var number = ["0","1","2","3","4","5","6","7","8","9"];
         var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-        function essai(json)
+        function transformation_value_json_to_table(json)
         {
             var i = 1;
             while(json[i]!="]")
@@ -245,15 +246,15 @@ var url = "Indicateurs2.xlsx";
                         while (est_dans(number,json[taille2]))
                         {
                             console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
-                            tab2[z] += json[taille2];
-                            console.log(tab2[z])
+                            valeurs[z] += json[taille2];
+                            console.log(valeurs[z])
                             taille2++;
                         }  
                         z++;  
                     }
                 }
             }
-            console.log(tab2);
+            console.log(valeurs);
         }
 
         function est_dans(tab,x)
@@ -266,7 +267,9 @@ var url = "Indicateurs2.xlsx";
             return false
         }
         oReq.send();
-
+  console.log(valeurs[i]);
+//--------------------------------------------------------------------------------------------------------------------------------------------
+//calculs proportion bar graph
 var avis = 500;
 var avis_ouverts = 150;
 var avis_fermés = 100;
@@ -550,25 +553,41 @@ function GetTableFromExcel(data) {
 
 //partie indicateurs
 
+function calcul_longueur(x1,y1,x2,y2)
+{
+  console.log("L = " + Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1))))
+};
+var x1 = 150;
+var y1 = 144;
+var x2 = 208;
+var y2 = 134
+calcul_longueur(x1,y1,x2,y2)
+var indice_tab = 0;
+var aiguilleX = ["87","87.5","89","92","95","103","113","123","133","143","152","161","170","179","188","199","202","205","208","213"]
+var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","82","83","87","93","104","114","124","134","144"]
+
 var canvas = document.getElementsByClassName('bar_graph');
-for (let i = 0 ; i < canvas.length ; i++)
+for (var i = 0 ; i < canvas.length ; i++)
 {
     var ctx = canvas[i].getContext('2d');
-    var index2 = 0;
+    /*var index2 = 0;
     var x1 = test[i];
     var x2 = parseFloat(x[x1])+70;
-    var y2 = y[x1];
-    dessine_graph(x2,y2);
+    var y2 = y[x1];*/
+    dessine_graph();
 }
 
 function dessine_graph()
 {
   var tab = [65,225];
   var tab2 = [33,175];
+  var max = ["35","70"];
+  var inter = [10,30];
+  var rayon = 100;
     //dessin du quart rouge
     ctx.beginPath();
     ctx.strokeStyle = 'red';
-    ctx.arc(150,150,90,(7/4)*Math.PI,2*Math.PI);
+    ctx.arc(150,150,100,(7/4)*Math.PI,2*Math.PI);
     ctx.stroke();
     ctx.lineTo(150,150);
     ctx.stroke();
@@ -579,7 +598,7 @@ function dessine_graph()
 
     ctx.beginPath();
     ctx.strokeStyle = 'orange';
-    ctx.arc(150,150,90,(3/2)*Math.PI,(7/4)*Math.PI);
+    ctx.arc(150,150,100,(3/2)*Math.PI,(7/4)*Math.PI);
     ctx.stroke();
     ctx.lineTo(150,150);
     ctx.stroke();
@@ -590,7 +609,7 @@ function dessine_graph()
 
     ctx.beginPath();
     ctx.strokeStyle = 'yellow';
-    ctx.arc(150,150,90,(5/4)*Math.PI,(3/2)*Math.PI);
+    ctx.arc(150,150,100,(5/4)*Math.PI,(3/2)*Math.PI);
     ctx.stroke();
     ctx.lineTo(150,150);
     ctx.stroke();
@@ -601,7 +620,7 @@ function dessine_graph()
 
     ctx.beginPath();
     ctx.strokeStyle = 'green';
-    ctx.arc(150,150,90,Math.PI,(5/4)*Math.PI);
+    ctx.arc(150,150,100,Math.PI,(5/4)*Math.PI);
     ctx.stroke();
     ctx.lineTo(150,150);
     ctx.stroke();
@@ -617,19 +636,55 @@ function dessine_graph()
     ctx.stroke();
     ctx.restore();
     ctx.closePath();
-
+    if (i%2 == 0)
+    {
+      if (valeurs[i]>15)
+        {
+          if (valeurs[i] <= 22)
+            indice_tab = 16
+          else if (valeurs[i] <= 27)
+            indice_tab = 17
+          else if (valeurs[i] <= 32)
+            indice_tab = 18
+          else if (valeurs[i] <= 35)
+            indice_tab = 19
+        }
+        else
+        {
+          indice_tab = valeurs[i]
+        }
+    }
+    if (i%2 == 1)
+    {
+      if (valeurs[i] <= 47)
+      {
+        indice_tab = Math.trunc(valeurs[i] / 3)
+      }
+      else
+      {
+        if (valeurs[i] <= 56)
+          indice_tab = 16
+        else if (valeurs[i] <= 64)
+          indice_tab = 17
+        else if (valeurs[i] <= 71)
+          indice_tab = 18
+        else if (valeurs[i] <= 71)
+          indice_tab = 19
+      }
+    }
     ctx.beginPath();
     ctx.moveTo(150,144),
     ctx.strokeStyle = 'black';
-    ctx.lineWidth = "10";
-    ctx.lineTo(88,144);
+    ctx.lineWidth = "15";
+    console.log(x2,y2)
+    ctx.lineTo(aiguilleX[indice_tab],aiguilleY[indice_tab]);
     ctx.stroke();
     ctx.restore();
 
     ctx.beginPath();
     ctx.strokeStyle = 'white';
     ctx.lineWidth = "4";
-    ctx.arc(150,150,90,Math.PI,2*Math.PI);
+    ctx.arc(150,150,100,Math.PI,2*Math.PI);
     ctx.stroke();
     ctx.lineTo(0,150);
     ctx.stroke();
@@ -637,18 +692,18 @@ function dessine_graph()
 
     ctx.font = '2.2vw serif';
     ctx.fillStyle = 'black';
-    ctx.fillText('10', 135, 30);
-    ctx.fillText('+20', 245, 150);
+    ctx.fillText(inter[i%2], 135, 30);
+    ctx.fillText(max[i%2], 255, 150);
     ctx.fillText('0',20,150);
     ctx.restore();
 
     ctx.font = '2.2vw serif';
     ctx.fillStyle = 'black';
-    ctx.fillText('10', 135, 30);
-    ctx.fillText('+20', 245, 150);
+    ctx.fillText(inter[i%2], 135, 30);
+    ctx.fillText(max[i%2], 255, 150);
     ctx.fillText('0',20,150);
     ctx.restore();
-  }
+  };
    
 </script>
 </html>
