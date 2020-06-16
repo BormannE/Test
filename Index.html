@@ -187,86 +187,85 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
 <script type="text/javascript">
 var url = "Indicateurs2.xlsx";
-console.log(url);
-var oReq = new XMLHttpRequest();
-oReq.open("GET", url, true);
-oReq.responseType = "arraybuffer";
+        var oReq = new XMLHttpRequest();
+        oReq.open("GET", url, true);
+        oReq.responseType = "arraybuffer";
 
-oReq.onload = function(e) {
-var arraybuffer = oReq.response;
+        oReq.onload = function(e) {
+            var arraybuffer = oReq.response;
 
-/* convert data to binary string */
-var data = new Uint8Array(arraybuffer);
-var arr = new Array();
-for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-var bstr = arr.join("");
+            /* convert data to binary string */
+            var data = new Uint8Array(arraybuffer);
+            var arr = new Array();
+            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+            var bstr = arr.join("");
 
-/* Call XLSX */
-var workbook = XLSX.read(bstr, {
-    type: "binary"
-});
+            /* Call XLSX */
+            var workbook = XLSX.read(bstr, {
+                type: "binary"
+            });
 
-/* DO SOMETHING WITH workbook HERE */
-var first_sheet_name = workbook.SheetNames[0];
-/* Get worksheet */
-var worksheet = workbook.Sheets[first_sheet_name];
-var test4 = XLSX.utils.sheet_to_json(worksheet, {
-    raw: true
-});
-var test2 = (JSON.stringify(test4,null,2));
-console.log(test2);
-var test = JSON.stringify(test2);
-console.log(test);
-essai(test);
-}
-        
-var z = 0;
-var tab2 = [[],[]];
-var PAU1;
-var number = ["0","1","2","3","4","5","6","7","8","9"];
-var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-function essai(json)
-{
-    var i = 1;
-    while(json[i]!="]")
-    {
-        i++;
-    }
-    var taille = i+2;
-    for (let j=0;j<taille;j++)
-    {
-        if (json[j] == "\"")
-        {
-            if (json[j+1] == ":")
-            {
-                var taille2 = parseInt(j)+3;
-                console.log("j = " + j + " z = " + 3 + " j+z = " + taille2)
-                console.log(j);
-            
-                while (est_dans(number,json[taille2]))
-                {
-                    console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
-                    tab2[z] += json[taille2];
-                    console.log(tab2[z])
-                    taille2++;
-                }  
-                z++;  
-            }
+            /* DO SOMETHING WITH workbook HERE */
+            var first_sheet_name = workbook.SheetNames[0];
+            /* Get worksheet */
+            var worksheet = workbook.Sheets[first_sheet_name];
+            var test4 = XLSX.utils.sheet_to_json(worksheet, {
+                raw: true
+            });
+            var test2 = (JSON.stringify(test4,null,2));
+            console.log(test2);
+            var test = JSON.stringify(test2);
+            console.log(test);
+            essai(test);
         }
-    }
-    console.log(tab2);
-}
+        
+        var z = 0;
+        var tab2 = [[],[]];
+        var PAU1;
+        var number = ["0","1","2","3","4","5","6","7","8","9"];
+        var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        function essai(json)
+        {
+            var i = 1;
+            while(json[i]!="]")
+            {
+                i++;
+            }
+            var taille = i+2;
+            for (let j=0;j<taille;j++)
+            {
+                if (json[j] == "\"")
+                {
+                    if (json[j+1] == ":")
+                    {
+                        var taille2 = parseInt(j)+3;
+                        console.log("j = " + j + " z = " + 3 + " j+z = " + taille2)
+                        console.log(j);
+                    
+                        while (est_dans(number,json[taille2]))
+                        {
+                            console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
+                            tab2[z] += json[taille2];
+                            console.log(tab2[z])
+                            taille2++;
+                        }  
+                        z++;  
+                    }
+                }
+            }
+            console.log(tab2);
+        }
 
-function est_dans(tab,x)
-{
-    for(let k=0;k<tab.length;k++)
-    {
-        if (x == tab[k])
-            return true
-    }
-    return false
-}
-oReq.send();
+        function est_dans(tab,x)
+        {
+            for(let k=0;k<tab.length;k++)
+            {
+                if (x == tab[k])
+                    return true
+            }
+            return false
+        }
+        oReq.send();
 
 var avis = 500;
 var avis_ouverts = 150;
