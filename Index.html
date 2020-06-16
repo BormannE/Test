@@ -253,7 +253,7 @@ var url = "Indicateurs2.xlsx";
                     }
                 }
             }
-          console.log(valeurs);
+          return valeurs;
         }
 
         function est_dans(tab,x)
@@ -266,7 +266,7 @@ var url = "Indicateurs2.xlsx";
             return false
         }
         oReq.send();
-  console.log("valeurs = " + valeurs);
+  console.log(transformation_value_json_to_table(test));
 //--------------------------------------------------------------------------------------------------------------------------------------------
 //calculs proportion bar graph
 var avis = 500;
