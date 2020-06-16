@@ -265,25 +265,25 @@ avis = valeurs[8];
 avis_ouverts = valeurs[9];
 avis_fermés = valeurs[10];
           proportion();
-dessine_bar_graph(i);
+dessine_bar_graph(i,ctx);
 i++;
           avis = valeurs[11];
 avis_ouverts = valeurs[12];
 avis_fermés = valeurs[13];
           proportion();
-          dessine_bar_graph(i);
+          dessine_bar_graph(i,ctx);
 i++;
 avis = valeurs[14];
 avis_ouverts = valeurs[15];
 avis_fermés = valeurs[16];
           proportion();
-          dessine_bar_graph(i);
+          dessine_bar_graph(i,ctx);
 i++;
           avis = valeurs[17];
 avis_ouverts = valeurs[18];
 avis_fermés = valeurs[19];
           proportion();
-          dessine_bar_graph(i);
+          dessine_bar_graph(i,ctx);
         }
   oReq.send();
   
@@ -341,7 +341,7 @@ function proportion()
   proportion_avis = 1 - (proportion_avis_ouverts + proportion_avis_fermés);
 }
 
-function dessine_bar_graph(i)
+function dessine_bar_graph(i,ctx)
 {
   ctx.beginPath()
   ctx.font = '0.9vw serif';
