@@ -373,9 +373,6 @@ function dessine_bar_graph(i)
   var hauteur = [maximale,hauteur3,hauteur2];
   var couleur = ['green','orange','blue'];
   var positionX = [51,112,175,242];
-  let i=0;
-  while (i<4)
-  {
   for (let j = 0 ; j<hauteur.length; j++)
   {
     ctx.beginPath();
@@ -391,9 +388,7 @@ function dessine_bar_graph(i)
     ctx.fillStyle = couleur[j];
     ctx.fill();
     ctx.stroke();
-  }
-  i++;
-  }
+   }
 }
 //---------------------------------------------------------------------------------------------------------------------------------
 
