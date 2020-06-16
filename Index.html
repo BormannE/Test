@@ -188,10 +188,10 @@
 <script type="text/javascript">
 //Recherche des valeurs pour les indicateurs
 var url = "Indicateurs2.xlsx";
-        var oReq = new XMLHttpRequest();
-        oReq.open("GET", url, true);
-        oReq.responseType = "arraybuffer";
-        var valeurs = [[],[],[],[],[],[],[],[]];
+var oReq = new XMLHttpRequest();
+oReq.open("GET", url, true);
+oReq.responseType = "arraybuffer";
+var valeurs = [[],[],[],[],[],[],[],[]];
 
         oReq.onload = function(e) {
             var arraybuffer = oReq.response;
@@ -220,7 +220,10 @@ var url = "Indicateurs2.xlsx";
             console.log(test);
             console.log("valeurs[0] = " + valeurs[0]);
             valeurs  = transformation_value_json_to_table(test);
-          console.log("valeurs = " + valeurs)
+        }
+  oReq.send();
+  
+  console.log("valeurs = " + valeurs)
 var canvas = document.getElementsByClassName('bar_graph');
           var l = 0;
 for (var i = 0 ; i < canvas.length ; i++)
@@ -233,8 +236,6 @@ for (var i = 0 ; i < canvas.length ; i++)
     dessine_graph(valeurs,l);
     l++;
 }
-        }
-  oReq.send();
         
         var z = 0;
         //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
