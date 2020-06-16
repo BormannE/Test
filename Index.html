@@ -206,6 +206,10 @@ var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
 var valeurs = [[],[],[],[],[],[],[],[]];
+  var z = 0;
+  //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
+   var number = ["0","1","2","3","4","5","6","7","8","9"];
+  var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
         oReq.onload = function(e) {
             var arraybuffer = oReq.response;
@@ -234,14 +238,7 @@ var valeurs = [[],[],[],[],[],[],[],[]];
             console.log(test);
             console.log("valeurs[0] = " + valeurs[0]);
             valeurs  = transformation_value_json_to_table(test);
-        }
-  oReq.send();
-  var z = 0;
-  //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
-   var number = ["0","1","2","3","4","5","6","7","8","9"];
-  var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  console.log("Je fais la boucle qu'une fois")
-  var canvas = document.getElementsByClassName('bar_graph');
+          var canvas = document.getElementsByClassName('bar_graph');
           var l = 0;
 for (var i = 0 ; i < canvas.length ; i++)
 {
@@ -253,6 +250,10 @@ for (var i = 0 ; i < canvas.length ; i++)
     dessine_graph(valeurs,l);
     l++;
 }
+        }
+  oReq.send();
+  
+  
         
         
         function transformation_value_json_to_table(json)
@@ -706,7 +707,6 @@ function dessine_graph(valeurs,i)
     ctx.fillText(max[i%2], 255, 150);
     ctx.fillText('0',20,150);
     ctx.restore();
-  console.log("valeurs = " + valeurs);
   };
    
 </script>
