@@ -363,6 +363,7 @@ function dessine_bar_graph(i,ctx)
   ctx.restore();
   var maximale = 160; //taille maximale en pixel
   var hauteurmax = maximale - (avis/900*maximale)
+  console.log("proportion_avis_fermés = " + proportion_avis_fermés)
   var hauteur3 = maximale - (maximale * Number.parseInt(proportion_avis_fermés));
   var hauteur2 = maximale - (maximale * Number.parseInt(proportion_avis_fermés) + maximale * Number.parseInt(proportion_avis))
   var hauteur1 = maximale - (maximale * Number.parseInt(proportion_avis_fermés) + maximale * Number.parseInt(proportion_avis) + maximale * Number.parseInt(proportion_avis_ouverts));
