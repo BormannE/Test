@@ -207,6 +207,13 @@ oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
 var valeurs = [[],[],[],[],[],[],[],[]];
   var z = 0;
+  var avis = 500;
+var avis_ouverts = 150;
+var avis_fermés = 100;
+var autres_avis = avis - (avis_fermés + avis_ouverts);
+var proportion_avis_ouverts = 0;
+var proportion_avis_fermés = 0;
+var proportion_avis = 0
   //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
    var number = ["0","1","2","3","4","5","6","7","8","9"];
   var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -251,6 +258,32 @@ for (var i = 0 ; i < canvas.length ; i++)
     dessine_graph(valeurs,l,ctx);
     l++;
 }
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var i = 0;
+avis = valeurs[8];
+avis_ouverts = valeurs[9];
+avis_fermés = valeurs[10];
+          proportion();
+dessine_bar_graph(i);
+i++;
+          avis = valeurs[11];
+avis_ouverts = valeurs[12];
+avis_fermés = valeurs[13];
+          proportion();
+          dessine_bar_graph(i);
+i++;
+avis = valeurs[14];
+avis_ouverts = valeurs[15];
+avis_fermés = valeurs[16];
+          proportion();
+          dessine_bar_graph(i);
+i++;
+          avis = valeurs[17];
+avis_ouverts = valeurs[18];
+avis_fermés = valeurs[19];
+          proportion();
+          dessine_bar_graph(i);
         }
   oReq.send();
   
@@ -300,14 +333,6 @@ for (var i = 0 ; i < canvas.length ; i++)
         }
 //--------------------------------------------------------------------------------------------------------------------------------------------
 //calculs proportion bar graph
-var avis = 500;
-var avis_ouverts = 150;
-var avis_fermés = 100;
-var autres_avis = avis - (avis_fermés + avis_ouverts);
-var proportion_avis_ouverts = 0;
-var proportion_avis_fermés = 0;
-var proportion_avis = 0
-proportion();
 
 function proportion()
 {
@@ -316,10 +341,7 @@ function proportion()
   proportion_avis = 1 - (proportion_avis_ouverts + proportion_avis_fermés);
 }
 
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-dessine_bar_graph();
-function dessine_bar_graph()
+function dessine_bar_graph(i)
 {
   ctx.beginPath()
   ctx.font = '0.9vw serif';
@@ -339,15 +361,17 @@ function dessine_bar_graph()
   ctx.lineTo(297,71);
   ctx.stroke();
   ctx.restore();
-  var max = 150; //taille maximale en pixel
-  var hauteur1 = max * proportion_avis_ouverts;
-  var hauteur2 = max * proportion_avis;
-  var hauteur3 = max * proportion_avis_fermés;
-  hauteur2 += hauteur1;
-  hauteur3 += hauteur2;
-  var hauteurDep = [5,hauteur1,hauteur2];
-  var hauteur = [hauteur1,hauteur2,hauteur3];
-  var couleur = ['blue','orange','green'];
+  var maximale = 160; //taille maximale en pixel
+  var hauteurmax = maximale - (ordres/900*maximale)
+  var hauteur3 = maximale - (maximale * proportion_ordres_hors_delais);
+  var hauteur2 = maximale - (maximale * proportion_ordres_hors_delais + maximale * proportion_ordres)
+  var hauteur1 = maximale - (maximale * proportion_ordres_hors_delais + maximale * proportion_ordres + maximale * proportion_ordres_ouverts);
+  console.log("hauteur1 = " + hauteur1)
+  console.log("hauteur2 = " + hauteur2)
+  console.log("hauteur3 = " + hauteur3)
+  var hauteurDep = [hauteur3,hauteur2,hauteur1];
+  var hauteur = [maximale,hauteur3,hauteur2];
+  var couleur = ['green','orange','blue'];
   var positionX = [51,112,175,242];
   let i=0;
   while (i<4)
