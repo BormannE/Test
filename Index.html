@@ -454,22 +454,7 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 
-//point en x de l'aiguille
-var x = ["35","35","35","36","37","38.5","40","42","44","45","49","53","58","61","65","69","74","78","83","88","92","97","101","105","108","113","117","121","122","124","126","127.5","129","130","131","131","131"];
-//point en y de l'aiguille
-var y = ["95","91.5","88","84.5","81","77.5","74","70.5","67","65","61.5","58","54.5","53","51","50","49","48","48","48","49","50","51","53","54.5","58","61.5","65","67","70.5","74","77.5","81","84.5","88","91.5","95"];
-var test = [20,10]
-/*var canvas = document.getElementsByClassName('bar_graph');
-for (let i = 0 ; i < canvas.length ; i++)
-{
-    var ctx = canvas[i].getContext('2d');
-    var index2 = 0;
-    var x1 = test[i];
-    var x2 = parseFloat(x[x1])+70;
-    var y2 = y[x1];
-    dessine_graph();
-}*/
-
+var timeOut2 = 0;
 var slideAct = document.getElementById("slideshow");
 slideAct.addEventListener("mouseover",function(){
   clearTimeout(timeOut);
@@ -480,8 +465,13 @@ slideAct.addEventListener("mouseover",function(){
 slideAct.addEventListener("mouseout", function(){
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
-  setTimeout(carousel, 1000*interval);
+  timeOut2 = setTimeOut(carousel, 1000*interval);
 });
+
+//point en x de l'aiguille
+var x = ["35","35","35","36","37","38.5","40","42","44","45","49","53","58","61","65","69","74","78","83","88","92","97","101","105","108","113","117","121","122","124","126","127.5","129","130","131","131","131"];
+//point en y de l'aiguille
+var y = ["95","91.5","88","84.5","81","77.5","74","70.5","67","65","61.5","58","54.5","53","51","50","49","48","48","48","49","50","51","53","54.5","58","61.5","65","67","70.5","74","77.5","81","84.5","88","91.5","95"];
 
 //----------------------------------------------------------------------------------------------------------------------------------
 
