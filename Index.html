@@ -28,12 +28,13 @@
   </div>
   <canvas id="canvas" class="bar_graph2"></canvas>
   <div class="legende">
+    <p style="color:blue"></p>
     <p style="color:orange">Hors délais</p>
     <p style="color:green">Ouverts prêts</p>
   </div>
   <div class="noms">
     <p>Nombre pannes ouvertes</p>
-    <p>Nombre ordres ouverts sans ordres</p>
+    <p>Nombre avis ouverts sans ordres</p>
   </div>
   <div class="baro">
     <canvas id="canvas1" class="bar_graph"></canvas>
@@ -423,7 +424,7 @@ function plusSlides(n) {
   console.log("Next/Previous est appelé")
   clearTimeout(timeOut);
   showSlides(slideIndex += n);
-  carousel();
+  timeOut = setTimeout(carousel, interval*1000);
 }
 
 // Thumbnail image controls
@@ -431,7 +432,7 @@ function currentSlide(n) {
   console.log("CurrentSlide est appelé")
   clearTimeout(timeOut);
   showSlides(slideIndex = n);
-  //timeOut = setTimeout(carousel, interval*1000);
+  timeOut = setTimeout(carousel, interval*1000);
 }
 
 function showSlides(n) {
@@ -470,7 +471,7 @@ slideAct.addEventListener("mouseover",function(){
 slideAct.addEventListener("mouseout", function(){
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
-  timeOut2 = setTimeout(carousel, 1000*interval);
+  timeOut = setTimeout(carousel, interval*1000);
 });
 
 //point en x de l'aiguille
