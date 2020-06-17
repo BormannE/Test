@@ -235,13 +235,13 @@ h1
 {
     text-align: center;
     font-size: 1vw;
-    margin: 0.5vw;
+    margin: 0.25vw;
 }
 
 .aside_droit img
 {
     width: 11.5vw;
-    margin-bottom: 0.5vw;
+    margin: 0.25vw 0;
 }
 
 .aside_droit h1
