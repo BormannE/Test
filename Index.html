@@ -332,12 +332,12 @@ avis_fermés = valeurs[19];
 
 function proportion()
 {
+  proportion_avis = autres_avis / 900;
+  console.log("proportion_avis_autres = " + proportion_avis)
   proportion_avis_ouverts = avis_ouverts / 900;
   console.log("proportion_avis_ouverts = " + proportion_avis_ouverts)
   proportion_avis_fermés = avis_fermés/900;
   console.log("proportion_avis_fermés = " + proportion_avis_fermés)
-  proportion_avis = autres_avis / 900;
-  console.log("proportion_avis_autres = " + proportion_avis)
 }
 
 function dessine_bar_graph(i,ctx)
@@ -366,9 +366,9 @@ console.log("avis_fermés = " + avis_fermés)
   ctx.restore();
   var maximale = 150; //taille maximale en pixel
   var hauteurmax = maximale - (avis/900*maximale)
+  console.log("2.proportion_avis_autres = " + proportion_avis)
   console.log("2.proportion_avis_ouverts = " + proportion_avis_ouverts)
 console.log("2.proportion_avis_fermés = " + proportion_avis_fermés)
-console.log("2.proportion_avis_autres = " + proportion_avis)
   var hauteur3 = proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis * maximale//(maximale * (proportion_avis_fermés));
   var hauteur2 =  proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale//(maximale * (proportion_avis_fermés) + maximale * (proportion_avis))
   var hauteur1 =  proportion_avis_fermés * maximale;
