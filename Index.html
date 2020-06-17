@@ -369,7 +369,7 @@ console.log("avis_fermés = " + avis_fermés)
   console.log("2.proportion_avis_ouverts = " + proportion_avis_ouverts)
 console.log("2.proportion_avis_fermés = " + proportion_avis_fermés)
 console.log("2.proportion_avis_autres = " + proportion_avis)
-  var hauteur3 = proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis_autres * maximale//(maximale * (proportion_avis_fermés));
+  var hauteur3 = proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis * maximale//(maximale * (proportion_avis_fermés));
   var hauteur2 =  proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale//(maximale * (proportion_avis_fermés) + maximale * (proportion_avis))
   var hauteur1 =  proportion_avis_fermés * maximale;
   console.log(maximale - (maximale * (proportion_avis_fermés)));
