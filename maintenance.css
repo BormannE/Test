@@ -158,6 +158,13 @@ h1
     margin-left:2.5vw;
 }
 
+#usines p
+{
+    font-size: 1vw;
+    margin: 0.25vw auto;
+    font-weight: bold; 
+}
+
 .noms
 {
     display: flex;
