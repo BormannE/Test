@@ -410,6 +410,7 @@ function carousel() {
     }
   dots[slideIndex-1].className += " active";
   slideIndex = slideIndex%4; //module le nombre de photos
+  console.log("timeOut = " + timeOut)
   timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
   }
 }
@@ -420,10 +421,10 @@ showSlides(slideIndex);
 function plusSlides(n) {
   console.log("1. timeOut = " + timeOut)
   clearTimeout(timeOut);
-  console.log("1. timeOut = " + timeOut)
+  console.log("2. timeOut = " + timeOut)
   showSlides(slideIndex += n);
   timeOut = setTimeout(carousel, interval*1000);
-  console.log("1. timeOut = " + timeOut)
+  console.log("3. timeOut = " + timeOut)
 }
 
 // Thumbnail image controls
