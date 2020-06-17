@@ -332,17 +332,10 @@ avis_fermés = valeurs[19];
 
 function proportion()
 {
-  console.log("proportion_avis_autres = " + proportion_avis)
-  proportion_avis = 0.2565;
-  console.log("proportion_avis_autres = " + proportion_avis)
-  console.log("avis = " + avis)
   proportion_avis = avis / 900;
   console.log("proportion_avis_autres = " + avis/900)
-  console.log("proportion_avis_autres = " + proportion_avis)
   proportion_avis_ouverts = avis_ouverts / 900;
-  console.log("proportion_avis_ouverts = " + proportion_avis_ouverts)
   proportion_avis_fermés = avis_fermés/900;
-  console.log("proportion_avis_fermés = " + proportion_avis_fermés)
 }
 
 function dessine_bar_graph(i,ctx)
