@@ -418,12 +418,9 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  console.log("1. timeOut = " + timeOut)
   clearTimeout(timeOut);
-  console.log("2. timeOut = " + timeOut)
   showSlides(slideIndex += n);
   timeOut = setTimeout(carousel, interval*1000);
-  console.log("3. timeOut = " + timeOut)
 }
 
 // Thumbnail image controls
@@ -476,7 +473,6 @@ for (let i = 0 ; i < canvas.length ; i++)
 var slideAct = document.getElementById("slideshow");
 slideAct.addEventListener("mouseover",function(){
   clearTimeout(timeOut);
-  timeOut = 0;
   document.getElementsByClassName("next")[0].style.background = "rgba(0,0,0,0.8)";
   document.getElementsByClassName("prev")[0].style.background = "rgba(0,0,0,0.8)";
 });
