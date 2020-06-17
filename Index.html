@@ -384,19 +384,8 @@ var slideIndex = 0;
 var interval = 3; //temps de changement de chaque diapo
 var stopCarousel = false;
 var timeOut;
-function testcarou()
-{
-  if (!stopCarousel)
-  {
-    timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
-  }
-  else
-  {
-    clearTimeout(timeOut);
-  }
-}
 
-testcarou();
+carousel();
 
 //fonction qui permet de faire défiler les images
 function carousel() {
@@ -423,6 +412,7 @@ function carousel() {
     }
   dots[slideIndex-1].className += " active";
   slideIndex = slideIndex%4; //module le nombre de photos
+  timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
   }
 }
 
@@ -430,20 +420,19 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  stopCarousel = true;
   console.log("Next/Previous est appelé")
+  clearTimeout(timeOut);
   showSlides(slideIndex += n);
-  stopCarousel = false;
-  testcarou();
+  carousel();
 }
 
 // Thumbnail image controls
-/*function currentSlide(n) {
+function currentSlide(n) {
   console.log("CurrentSlide est appelé")
   clearTimeout(timeOut);
   showSlides(slideIndex = n);
   //timeOut = setTimeout(carousel, interval*1000);
-}*/
+}
 
 function showSlides(n) {
   console.log("ShowSlide est appelé")
@@ -470,9 +459,10 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 } 
 
+var timeOut2 = 0;
 var slideAct = document.getElementById("slideshow");
 slideAct.addEventListener("mouseover",function(){
-  stopCarousel = true;
+  clearTimeout(timeOut);
   document.getElementsByClassName("next")[0].style.background = "rgba(0,0,0,0.8)";
   document.getElementsByClassName("prev")[0].style.background = "rgba(0,0,0,0.8)";
 });
@@ -480,8 +470,7 @@ slideAct.addEventListener("mouseover",function(){
 slideAct.addEventListener("mouseout", function(){
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
-  stopCarousel = false;
-  testcarou();
+  timeOut2 = setTimeout(carousel, 1000*interval);
 });
 
 //point en x de l'aiguille
