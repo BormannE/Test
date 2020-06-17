@@ -73,16 +73,16 @@
   <div id="text_vertical">ARRIVANT</div>
   <xml id="fichierxml" src="arrivant.xml">
   <ul>
-  <ul   datasrc="#fichierxml">
+  <tr datasrc="#fichierxml">
   <!-- Ici pour changer les différentes informations -->
-    <li id="NA_Site">Site : <span datafld="site"></span></li>
-    <li id="NA_Date">Date d'éntrée : <span datafld="date"></li>
-    <li id="NA_Nom">Nom : BORMANN</li>
-    <li id="NA_Prenom">Prénom : Enzo</li>
-    <li id="NA_Age">Age : 19</li>
-    <li id="NA_Metier">Métier : Stagiaire</li>
-    <li id="NA_Passion">Passion : F1, Tennis, Natation</li>
-  </ul>
+    <td id="NA_Site">Site : <span datafld="site"></span></td>
+    <td id="NA_Date">Date d'éntrée : <span datafld="date"></td>
+    <td id="NA_Nom">Nom : BORMANN</td>
+    <td id="NA_Prenom">Prénom : Enzo</td>
+    <td id="NA_Age">Age : 19</td>
+    <td id="NA_Metier">Métier : Stagiaire</td>
+    <td id="NA_Passion">Passion : F1, Tennis, Natation</td>
+  </tr>
   </ul>
   </xml>
   <a href="video.html"><img src="images/portrait.jpg"></a>
@@ -194,15 +194,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
 <script type="text/javascript">
 //javscript pour les fichiers XML
-if (window.XMLHttpRequest)
+/*if (window.XMLHttpRequest)
 {
   xmlhttp = new XMLHttpRequest();
 }
 xmlhttp.open("GET","arrivant.xml",false);
 xmlhttp.send();
 xmldoc = xmlhttp.responseXML;
-console.log(xmlhttp);
-document.getElementById("NA_Site").innerHTML = xmldoc.getElementsByTagName("site")[0].childNodes[0].nodeValue;
+
+document.getElementById("NA_Site").innerHTML = xmldoc.getElementsByTagName("site")[0].childNodes[0].nodeValue;*/
 
 //------------------------------------------------------------------------------------------------------------------
 //Recherche des valeurs pour les indicateurs
