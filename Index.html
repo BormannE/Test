@@ -340,10 +340,9 @@ function proportion()
 
 function dessine_bar_graph(i,ctx)
 {
-  console.log("avis = " + avis)
-console.log("avis_ouverts = " + avis_ouverts)
-console.log("avis_fermés = " + avis_fermés)
   proportion();
+  if (i == 0)
+  {
   ctx.beginPath()
   ctx.font = '0.9vw serif';
   ctx.fillStyle = 'black';
@@ -355,13 +354,14 @@ console.log("avis_fermés = " + avis_fermés)
   ctx.beginPath();
   ctx.strokeStyle = 'black';
   ctx.lineWidth = '3';
-  ctx.moveTo(35,5);
-  ctx.lineTo(297,5);
+  ctx.moveTo(35,2);
+  ctx.lineTo(297,2);
   ctx.stroke();
   ctx.moveTo(35,71);
   ctx.lineTo(297,71);
   ctx.stroke();
   ctx.restore();
+  }
   var maximale = 150; //taille maximale en pixel
   var hauteurmax = maximale - (proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis * maximale)
   console.log("2.proportion_avis_autres = " + proportion_avis)
