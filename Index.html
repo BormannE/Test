@@ -18,6 +18,7 @@
 <!-- Contenu principal -->
 <div class="head"><img src="images/bonhomme.jpg" alt="Logo" id="logo"><h1 id="TV">TV Maintenance</h1>
 </div>
+<!-- Partie de gauche -->
 <div class="aside_gauche">
   <h1 class="NoMargin">Nombre d'ordre total</h1>
   <div id="usines">
@@ -57,6 +58,7 @@
   </div>
   <h1 class="h1SansMargin">Indicateurs maint U3</h1>
   </div>
+<!-- navigation -->
 <div class="navigation">
 <ul class="nav2">
     <li class="nav"><a class="dif" href="http://delphes/fr/portailSALM/Pages/Default.aspx"><p>Acceuil Portail</p></a>
@@ -66,10 +68,12 @@
     <li class="nav"><a class="dif" href=""><p>Infos pratiques</p></a>
 </ul>
 </div>
+<!-- Nouvel arrivant -->
 <div class="arrivant">
   <div id="text_vertical">ARRIVANT</div>
   <ul>
   <ul>
+  <!-- Ici pour changer les différentes informations -->
     <li id="NA_Site">Site : U3</li>
     <li id="NA_Date">Date d'éntrée : 01.06.2020</li>
     <li id="NA_Nom">Nom : BORMANN</li>
@@ -85,7 +89,7 @@
 <div class="news">
 <div class="slideshow-container" id="slideshow">
 
-  <!-- image avec le nombre dimage en tout -->
+  <!-- images qui défilent -->
   <div class="mySlides fade">
     <img src="images/REX.png" style="width:100%">
   </div>
@@ -108,7 +112,7 @@
 </div>
 <br>
 
-<!-- Les poits qui permettent d'accéder aux autres photos -->
+<!-- Les poits qui permettent d'accéder aux autres photos !! ATTENTION !! changer le nombre de points si on ajoute/enlève une image -->
 <div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
@@ -412,7 +416,7 @@ function carousel() {
       dots[i].className = dots[i].className.replace(" active", "");
     }
   dots[slideIndex-1].className += " active";
-  slideIndex = slideIndex%4; //module le nombre de photos
+  slideIndex = slideIndex%(dots.length); //modulo le nombre de photos
   timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
   }
 }
