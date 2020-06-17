@@ -253,7 +253,6 @@ var l = 0;
 //dessin des différents indicateurs
 for (var i = 0 ; i < canvas.length ; i++)
 {
-  console.log("i = " + i);
     var ctx = canvas[i].getContext('2d');
     /*var index2 = 0;
     var x1 = test[i];
@@ -294,14 +293,10 @@ function transformation_value_json_to_table(json)
             if (json[j+1] == ":")
             {
                 var taille2 = parseInt(j)+3;
-                console.log("j = " + j + " z = " + 3 + " j+z = " + taille2)
-                console.log(j);
             
                 while (est_dans(number,json[taille2]))
                 {
-                    console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
                     valeurs[z] += json[taille2];
-                    console.log(valeurs[z])
                     taille2++;
                 }  
                 z++;  
@@ -394,7 +389,6 @@ carousel();
 
 //fonction qui permet de faire défiler les images
 function carousel() {
-  console.log("Carousel est appelé")
   if (!stopCarousel)
   {
   var i;
@@ -425,18 +419,15 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  console.log("Next/Previous est appelé")
   showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  console.log("CurrentSlide est appelé")
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  console.log("ShowSlide est appelé")
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -486,7 +477,6 @@ var y = ["95","91.5","88","84.5","81","77.5","74","70.5","67","65","61.5","58","
 function UploadProcess() {
   //Reference the FileUpload element.
   var fileUpload = document.getElementById("fileUpload");
-  console.log(fileUpload.value);
   var fichier = "Indicateurs2.xlsx";
   //Validate whether File is valid Excel file.
   var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xlsx)$/;
@@ -588,12 +578,11 @@ function GetTableFromExcel(data) {
 
 function calcul_longueur(x1,y1,x2,y2)
 {
-  console.log("L = " + Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1))))
+  return Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)))
 };
 
 function dessine_graph(valeurs,i,ctx)
 {
-  console.log("Est ce quela valeur[i] s'affiche ?" + valeurs[i]);
     //dessin du quart rouge
     ctx.beginPath();
     ctx.strokeStyle = 'red';
@@ -686,7 +675,6 @@ function dessine_graph(valeurs,i,ctx)
     ctx.moveTo(150,144),
     ctx.strokeStyle = 'black';
     ctx.lineWidth = "15";
-    console.log(x2,y2)
     ctx.lineTo(aiguilleX[indice_tab],aiguilleY[indice_tab]);
     ctx.stroke();
     ctx.restore();
