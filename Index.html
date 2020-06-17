@@ -33,7 +33,7 @@
   </div>
   <div class="noms">
     <p>Nombre pannes ouvertes</p>
-    <p>Nombre avis ouverts sans ordres</p>
+    <p>Nombre ordres ouverts sans ordres</p>
   </div>
   <div class="baro">
     <canvas id="canvas1" class="bar_graph"></canvas>
@@ -206,47 +206,47 @@ var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
 var valeurs = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
-  var z = 0;
-  var avis = 500;
-var avis_ouverts = 150;
-var avis_fermés = 100;
-var autres_avis = avis - (avis_fermés + avis_ouverts);
-var proportion_avis_ouverts = 0;
-var proportion_avis_fermés = 0;
-var proportion_avis = 0
+var z = 0;
+var ordres = 0;
+var ordres_ouverts = 0;
+var ordres_fermés = 0;
+var autres_ordres = ordres - (ordres_fermés + ordres_ouverts);
+var proportion_ordres_ouverts = 0;
+var proportion_ordres_fermés = 0;
+var proportion_ordres = 0
   //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
    var number = ["0","1","2","3","4","5","6","7","8","9"];
   var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-        oReq.onload = function(e) {
-            var arraybuffer = oReq.response;
+oReq.onload = function(e) {
+var arraybuffer = oReq.response;
 
-            /* convert data to binary string */
-            var data = new Uint8Array(arraybuffer);
-            var arr = new Array();
-            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-            var bstr = arr.join("");
+/* convert data to binary string */
+var data = new Uint8Array(arraybuffer);
+var arr = new Array();
+for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+var bstr = arr.join("");
 
-            /* Call XLSX */
-            var workbook = XLSX.read(bstr, {
-                type: "binary"
-            });
+/* Call XLSX */
+var workbook = XLSX.read(bstr, {
+    type: "binary"
+});
 
-            /* DO SOMETHING WITH workbook HERE */
-            var first_sheet_name = workbook.SheetNames[0];
-            /* Get worksheet */
-            var worksheet = workbook.Sheets[first_sheet_name];
-            var test4 = XLSX.utils.sheet_to_json(worksheet, {
-                raw: true
-            });
-            var test2 = (JSON.stringify(test4,null,2));
-            console.log(test2);
-            var test = JSON.stringify(test2);
-            console.log(test);
-            console.log("valeurs[0] = " + valeurs[0]);
-            valeurs  = transformation_value_json_to_table(test);
-          var canvas = document.getElementsByClassName('bar_graph');
-          var l = 0;
+/* DO SOMETHING WITH workbook HERE */
+var first_sheet_name = workbook.SheetNames[0];
+/* Get worksheet */
+var worksheet = workbook.Sheets[first_sheet_name];
+var test4 = XLSX.utils.sheet_to_json(worksheet, {
+    raw: true
+});
+var test2 = (JSON.stringify(test4,null,2));
+console.log(test2);
+var test = JSON.stringify(test2);
+console.log(test);
+console.log("valeurs[0] = " + valeurs[0]);
+valeurs  = transformation_value_json_to_table(test);
+var canvas = document.getElementsByClassName('bar_graph');
+var l = 0;
 for (var i = 0 ; i < canvas.length ; i++)
 {
   console.log("i = " + i);
@@ -260,126 +260,126 @@ for (var i = 0 ; i < canvas.length ; i++)
 }
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var i = 0;
-avis = valeurs[8];
-avis_ouverts = valeurs[9];
-avis_fermés = valeurs[10];
+/*var i = 0;
+ordres = valeurs[8];
+ordres_ouverts = valeurs[9];
+ordres_fermés = valeurs[10];
 dessine_bar_graph(i,ctx);
 i++;
-          avis = valeurs[11];
-avis_ouverts = valeurs[12];
-avis_fermés = valeurs[13];
-          dessine_bar_graph(i,ctx);
+ordres = valeurs[11];
+ordres_ouverts = valeurs[12];
+ordres_fermés = valeurs[13];
+dessine_bar_graph(i,ctx);
 i++;
-avis = valeurs[14];
-avis_ouverts = valeurs[15];
-avis_fermés = valeurs[16];
-          dessine_bar_graph(i,ctx);
+ordres = valeurs[14];
+ordres_ouverts = valeurs[15];
+ordres_fermés = valeurs[16];
+dessine_bar_graph(i,ctx);
 i++;
-          avis = valeurs[17];
-avis_ouverts = valeurs[18];
-avis_fermés = valeurs[19];
-          dessine_bar_graph(i,ctx);
+ordres = valeurs[17];
+ordres_ouverts = valeurs[18];
+ordres_fermés = valeurs[19];
+dessine_bar_graph(i,ctx);*/
+var b = 8;
+for (let a = 0 ; a < 4 ; a++)
+{
+  ordres = valeurs[b];
+  ordres_ouverts = valeurs[b+1];
+  ordres_fermés = valeurs[b+2];
+  b += 3;
+  dessine_bar_graph(a,ctx);
+}
         }
-  oReq.send();
-  
-  
-        
-        
-        function transformation_value_json_to_table(json)
-        {
-            var i = 1;
-            while(json[i]!="]")
-            {
-                i++;
-            }
-            var taille = i+2;
-            for (let j=0;j<taille;j++)
-            {
-                if (json[j] == "\"")
-                {
-                    if (json[j+1] == ":")
-                    {
-                        var taille2 = parseInt(j)+3;
-                        console.log("j = " + j + " z = " + 3 + " j+z = " + taille2)
-                        console.log(j);
-                    
-                        while (est_dans(number,json[taille2]))
-                        {
-                            console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
-                            valeurs[z] += json[taille2];
-                            console.log(valeurs[z])
-                            taille2++;
-                        }  
-                        z++;  
-                    }
-                }
-            }
-          return valeurs;
-        }
+oReq.send();
 
-        function est_dans(tab,x)
+//extraire les différentes données d'un fichier json
+function transformation_value_json_to_table(json)
+{
+    var i = 1;
+    while(json[i]!="]")
+    {
+        i++;
+    }
+    var taille = i+2;
+    for (let j=0;j<taille;j++)
+    {
+        if (json[j] == "\"")
         {
-            for(let k=0;k<30;k++)
+            if (json[j+1] == ":")
             {
-                if (x == tab[k])
-                    return true
+                var taille2 = parseInt(j)+3;
+                console.log("j = " + j + " z = " + 3 + " j+z = " + taille2)
+                console.log(j);
+            
+                while (est_dans(number,json[taille2]))
+                {
+                    console.log(est_dans(number,json[taille2])+ " " + json[taille2] + " " + taille2)
+                    valeurs[z] += json[taille2];
+                    console.log(valeurs[z])
+                    taille2++;
+                }  
+                z++;  
             }
-            return false
         }
+    }
+  return valeurs;
+}
+
+function est_dans(tab,x)
+{
+    for(let k=0;k<30;k++)
+    {
+        if (x == tab[k])
+            return true
+    }
+    return false
+}
 //--------------------------------------------------------------------------------------------------------------------------------------------
-//calculs proportion bar graph
+//calculs proportions bar graph
 
 function proportion()
 {
-  proportion_avis = avis / 900;
-  console.log("proportion_avis_autres = " + avis/900)
-  proportion_avis_ouverts = avis_ouverts / 900;
-  proportion_avis_fermés = avis_fermés/900;
+  proportion_ordres = ordres / 900;
+  proportion_ordres_ouverts = ordres_ouverts / 900;
+  proportion_ordres_fermés = ordres_fermés/900;
 }
 
 function dessine_bar_graph(i,ctx)
 {
+  //calcul de la proportion pour chaques couches du graph
   proportion();
+  //écriture de l'échelle
   if (i == 0)
   {
-  ctx.beginPath()
-  ctx.font = '0.9vw serif';
-  ctx.fillStyle = 'black';
-  ctx.fillText('900', 10, 10);
-  ctx.fillText('450', 10, 79);
-  ctx.fillText('900', 10, 10);
-  ctx.fillText('450', 10, 79);
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.strokeStyle = 'black';
-  ctx.lineWidth = '3';
-  ctx.moveTo(35,2);
-  ctx.lineTo(297,2);
-  ctx.stroke();
-  ctx.moveTo(35,71);
-  ctx.lineTo(297,71);
-  ctx.stroke();
-  ctx.restore();
+    ctx.beginPath()
+    ctx.font = '0.9vw serif';
+    ctx.fillStyle = 'black';
+    ctx.fillText('900', 10, 10);
+    ctx.fillText('450', 10, 79);
+    ctx.fillText('900', 10, 10);
+    ctx.fillText('450', 10, 79);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = '3';
+    ctx.moveTo(35,2);
+    ctx.lineTo(297,2);
+    ctx.stroke();
+    ctx.moveTo(35,71);
+    ctx.lineTo(297,71);
+    ctx.stroke();
+    ctx.restore();
   }
   var maximale = 150; //taille maximale en pixel
-  var hauteurmax = maximale - (proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis * maximale)
-  console.log("2.proportion_avis_autres = " + proportion_avis)
-  console.log("2.proportion_avis_ouverts = " + proportion_avis_ouverts)
-console.log("2.proportion_avis_fermés = " + proportion_avis_fermés)
-  var hauteur3 = proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale + proportion_avis * maximale//(maximale * (proportion_avis_fermés));
-  var hauteur2 =  proportion_avis_fermés * maximale + proportion_avis_ouverts * maximale//(maximale * (proportion_avis_fermés) + maximale * (proportion_avis))
-  var hauteur1 =  proportion_avis_fermés * maximale;
-  console.log("hauteurmax + hauteur3 = " + hauteurmax + hauteur3);
-  console.log("hauteur1 = " + hauteur1)
-  console.log("hauteur2 = " + hauteur2)
-  console.log("hauteur3 = " + hauteur3)
-  //var hauteurDep = [hauteur3,hauteur2,hauteur1];
-  var hauteurDep = [hauteurmax,hauteurmax+hauteur1,hauteurmax+hauteur2];
-  //var hauteur = [maximale,hauteur3,hauteur2];
-  var hauteur = [hauteurmax+hauteur1,hauteurmax+hauteur2,hauteurmax+hauteur3];
-  var couleur = ['green','orange','blue'];
-  var positionX = [51,112,175,242];
+  var hauteurmax = maximale - (proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale + proportion_ordres * maximale)
+  var hauteur3 = proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale + proportion_ordres * maximale
+  var hauteur2 =  proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale
+  var hauteur1 =  proportion_ordres_fermés * maximale;
+  var hauteurDep = [hauteurmax,hauteurmax+hauteur1,hauteurmax+hauteur2]; //hauteur de départ des différentes couches du graph
+  var hauteur = [hauteurmax+hauteur1,hauteurmax+hauteur2,hauteurmax+hauteur3]; //hauteur de final de différentes couches du graph
+  var couleur = ['green','orange','blue']; //couleurs des différentes couches
+  var positionX = [51,112,175,242]; // position des barres
+  //dessin des barres
   for (let j = 0 ; j<hauteur.length; j++)
   {
     ctx.beginPath();
