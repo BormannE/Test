@@ -71,11 +71,12 @@
 <!-- Nouvel arrivant -->
 <div class="arrivant">
   <div id="text_vertical">ARRIVANT</div>
+  <xml id="fichierxml" src="arrivant.xml">
   <ul>
-  <ul>
+  <ul   datasrc="#fichierxml">
   <!-- Ici pour changer les différentes informations -->
-    <li id="NA_Site">Site : U3</li>
-    <li id="NA_Date">Date d'éntrée : 01.06.2020</li>
+    <li id="NA_Site">Site : <span datafld="site"></span></li>
+    <li id="NA_Date">Date d'éntrée : <span datafld="date"></li>
     <li id="NA_Nom">Nom : BORMANN</li>
     <li id="NA_Prenom">Prénom : Enzo</li>
     <li id="NA_Age">Age : 19</li>
@@ -83,6 +84,7 @@
     <li id="NA_Passion">Passion : F1, Tennis, Natation</li>
   </ul>
   </ul>
+  </xml>
   <a href="video.html"><img src="images/portrait.jpg"></a>
 </div>
 <div class="page">
@@ -191,6 +193,18 @@
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
 <script type="text/javascript">
+//javscript pour les fichiers XML
+if (window.XMLHttpRequest)
+{
+  xmlhttp = new XMLHttpRequest();
+}
+xmlhttp.open("GET","arrivant.xml",false);
+xmlhttp.send();
+xmldoc = xmlhttp.responseXML;
+
+document.getElementById("NA_Site").innerHTML = xmldoc.getElementsByTagName("site")[0].childNodes[0].nodeValue;
+
+//------------------------------------------------------------------------------------------------------------------
 //Recherche des valeurs pour les indicateurs
   var x1 = 150;
 var y1 = 144;
