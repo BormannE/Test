@@ -418,19 +418,16 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  console.log("1. timeOut = " + timeOut)
   clearTimeout(timeOut);
-  console.log("2. timeOut = " + timeOut)
-  //showSlides(slideIndex += n);
-  //timeOut = setTimeout(carousel, interval*1000);
-  console.log("3. timeOut = " + timeOut)
+  showSlides(slideIndex += n);
+  carousel();
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   clearTimeout(timeOut);
   showSlides(slideIndex = n);
-  timeOut = setTimeout(carousel, interval*1000);
+  carousel();
 }
 
 function showSlides(n) {
@@ -483,7 +480,7 @@ slideAct.addEventListener("mouseover",function(){
 slideAct.addEventListener("mouseout", function(){
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
-  timeOut = setTimeout(carousel, interval*1000);
+  carousel();
 });
 
 //----------------------------------------------------------------------------------------------------------------------------------
