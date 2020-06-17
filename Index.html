@@ -465,7 +465,7 @@ slideAct.addEventListener("mouseover",function(){
 slideAct.addEventListener("mouseout", function(){
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
-  timeOut2 = setTimeOut(carousel, 1000*interval);
+  timeOut2 = setTimeout(carousel, 1000*interval);
 });
 
 //point en x de l'aiguille
