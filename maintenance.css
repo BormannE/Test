@@ -24,7 +24,8 @@ body
 
 .enligne a img
 {
-    margin: 1vw;
+    margin: 0.5vw 0.1vw;
+    width: 3vw;
 }
 
 #logo
