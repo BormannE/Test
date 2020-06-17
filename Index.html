@@ -383,7 +383,6 @@ function dessine_bar_graph(i,ctx)
 var slideIndex = 0;
 var interval = 3; //temps de changement de chaque diapo
 var stopCarousel = false;
-var nb_photos = 4;
 var timeOut;
 carousel();
 
@@ -410,7 +409,7 @@ function carousel() {
       dots[i].className = dots[i].className.replace(" active", "");
     }
   dots[slideIndex-1].className += " active";
-  slideIndex = slideIndex%nb_photos; //module le nombre de photos
+  slideIndex = slideIndex%4; //module le nombre de photos
   timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
   }
 }
