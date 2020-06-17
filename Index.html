@@ -210,43 +210,42 @@ var z = 0;
 var ordres = 0;
 var ordres_ouverts = 0;
 var ordres_fermés = 0;
-var autres_ordres = ordres - (ordres_fermés + ordres_ouverts);
 var proportion_ordres_ouverts = 0;
 var proportion_ordres_fermés = 0;
 var proportion_ordres = 0
-  //var valeurs = [[],[],[],[],[],[],[],[]]; //OU [[],[]]
-   var number = ["0","1","2","3","4","5","6","7","8","9"];
-  var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var number = ["0","1","2","3","4","5","6","7","8","9"];
+var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 oReq.onload = function(e) {
 var arraybuffer = oReq.response;
 
-/* convert data to binary string */
+// convert data to binary string 
 var data = new Uint8Array(arraybuffer);
 var arr = new Array();
 for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
 var bstr = arr.join("");
 
-/* Call XLSX */
+// Call XLSX
 var workbook = XLSX.read(bstr, {
     type: "binary"
 });
 
-/* DO SOMETHING WITH workbook HERE */
+// DO SOMETHING WITH workbook HERE
 var first_sheet_name = workbook.SheetNames[0];
-/* Get worksheet */
+
+// Get worksheet
 var worksheet = workbook.Sheets[first_sheet_name];
 var test4 = XLSX.utils.sheet_to_json(worksheet, {
     raw: true
 });
 var test2 = (JSON.stringify(test4,null,2));
-console.log(test2);
 var test = JSON.stringify(test2);
-console.log(test);
-console.log("valeurs[0] = " + valeurs[0]);
 valeurs  = transformation_value_json_to_table(test);
+
 var canvas = document.getElementsByClassName('bar_graph');
 var l = 0;
+
+//dessin des différents indicateurs
 for (var i = 0 ; i < canvas.length ; i++)
 {
   console.log("i = " + i);
@@ -258,29 +257,11 @@ for (var i = 0 ; i < canvas.length ; i++)
     dessine_graph(valeurs,l,ctx);
     l++;
 }
+
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-/*var i = 0;
-ordres = valeurs[8];
-ordres_ouverts = valeurs[9];
-ordres_fermés = valeurs[10];
-dessine_bar_graph(i,ctx);
-i++;
-ordres = valeurs[11];
-ordres_ouverts = valeurs[12];
-ordres_fermés = valeurs[13];
-dessine_bar_graph(i,ctx);
-i++;
-ordres = valeurs[14];
-ordres_ouverts = valeurs[15];
-ordres_fermés = valeurs[16];
-dessine_bar_graph(i,ctx);
-i++;
-ordres = valeurs[17];
-ordres_ouverts = valeurs[18];
-ordres_fermés = valeurs[19];
-dessine_bar_graph(i,ctx);*/
 var b = 8;
+
 for (let a = 0 ; a < 4 ; a++)
 {
   ordres = valeurs[b];
@@ -400,11 +381,13 @@ function dessine_bar_graph(i,ctx)
 //---------------------------------------------------------------------------------------------------------------------------------
 
 var slideIndex = 0;
-var interval = 3;
+var interval = 3; //temps de changement de chaque diapo
 var stopCarousel = false;
+var nb_photos = 4;
 var timeOut;
 carousel();
 
+//fonction qui permet de faire défiler les images
 function carousel() {
   if (!stopCarousel)
   {
@@ -427,7 +410,7 @@ function carousel() {
       dots[i].className = dots[i].className.replace(" active", "");
     }
   dots[slideIndex-1].className += " active";
-  slideIndex = slideIndex%4; //module le nombre de photos
+  slideIndex = slideIndex%nb_photos; //module le nombre de photos
   timeOut = setTimeout(carousel, interval*1000); // Change toutes les intervalles
   }
 }
