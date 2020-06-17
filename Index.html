@@ -420,14 +420,14 @@ showSlides(slideIndex);
 function plusSlides(n) {
   clearTimeout(timeOut);
   showSlides(slideIndex += n);
-  timeOut = setTimeout(carousel, interval*1000);
+  //timeOut = setTimeout(carousel, interval*1000);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   clearTimeout(timeOut);
   showSlides(slideIndex = n);
-  timeOut = setTimeout(carousel, interval*1000);
+  //timeOut = setTimeout(carousel, interval*1000);
 }
 
 function showSlides(n) {
