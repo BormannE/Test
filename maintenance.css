@@ -1,16 +1,15 @@
-
-
 body
 {
     top:0;
     bottom:0;
+    cursor: default;
 }
 
 .head
 {
     display:flex;
     align-items: center;
-    background-color: rgb(222,182,126);
+    background-image:url("images/background_bleu.png");
     height: 7vw;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 20px;
@@ -20,6 +19,7 @@ body
 {
     text-align: center;
     font-size: 3vw;
+    margin-top: 3vw
 }
 
 .enligne a img
@@ -32,7 +32,7 @@ body
 {
     margin: 0;
     margin-right: 2vw;
-    width: 8vw;
+    width: 31vw;
 }
 
 video
@@ -54,7 +54,9 @@ video
     text-decoration: none;
     margin: 0.5vw;
     margin-left: 0;
-    background-color: rgb(233, 126, 224);
+    /*background-image:linear-gradient(rgb(7, 100, 161), rgb(9, 122, 197), rgb(32, 148, 226), rgb(109, 177, 223), rgb(176, 212, 236),rgb(239, 247, 252));*/
+    /*background-image:linear-gradient(rgba(255, 0, 0, 0.63), rgba(255, 68, 68, 0.63), rgba(252, 126, 126, 0.63), rgba(253, 183, 183, 0.63), rgba(255, 244, 244, 0.63));*/
+    background-color: #00c2cb;
     border-radius: 20px;
     width: fit-content;
     font-weight: bold;
@@ -66,9 +68,12 @@ video
     margin: 0 auto;
 }
 
-li a p
+li a p, li p
 {
     font-size: 1.5vw;
+    padding: 0.75vw;
+    margin: 0;
+    cursor: pointer;
 }
 
 a
@@ -79,7 +84,9 @@ a
 
 .nav
 {
-    background-color: rgb(233, 126, 224);
+    background-color: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav2
@@ -93,12 +100,6 @@ a
     border-radius: 50px;
 }
 
-a p
-{
-    padding: 0.75vw;
-    margin: 0;
-}
-
 .enligne
 {
     display: flex;
@@ -109,6 +110,13 @@ h1
 {
     text-align: center;
     font-size: 1.5vw;
+}
+
+h5
+{
+    margin: 0.5vw;
+    font-size: 1vw;
+    text-align: center;
 }
 
 .aside_gauche
@@ -163,14 +171,6 @@ h1
     font-size: 1vw;
     margin: 0.25vw auto;
     font-weight: bold; 
-}
-
-#usines
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-left:2.5vw;
 }
 
 #usines p
@@ -234,15 +234,13 @@ h1
 {
     width: 16vw;
     float: right;
-    background-color: turquoise;
+    background-color: #83d1d4;
+    background-size: contain;
     padding : 1vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     margin: 0.5vw;
     margin-right: 0;
     border-radius: 15px;
-    height: 42vw;
+    height: 42.5vw;
     margin-bottom: 0;
 }
 
@@ -250,19 +248,27 @@ h1
 {
     text-align: center;
     font-size: 1vw;
-    margin: 0.25vw;
+    margin: auto;
+    padding:0.25vw;
+    width: 100%
 }
 
 .aside_droit img
 {
-    width: 11.5vw;
+    width: 4vw;
     margin: 0.25vw 0;
+    object-fit: contain;
 }
 
 .aside_droit h1
 {
     font-size: 1.4vw;
     margin: 0 auto;
+}
+
+.aside_droit a
+{
+    text-align: center;
 }
 
 #image1
@@ -293,6 +299,11 @@ h1
     display: block;
     object-fit: contain;
     max-height: 37vw;
+}
+
+#atelier
+{
+    margin: 0.25vw auto;
 }
 
 .info
@@ -379,7 +390,12 @@ h1
     font-weight: bold;
     margin : auto 1vw auto 2vw;
     text-align: center;
-    
+    height:10vw;
+}
+
+#text_vertical p
+{
+    margin: 0;
 }
 
 .arrivant a
@@ -396,7 +412,7 @@ h1
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgb(235, 41, 50);
+    background-image:linear-gradient(rgb(136, 136, 136), rgb(170, 170, 170), rgb(202, 202, 202), rgb(228, 228, 228), rgb(255, 255, 255));
     max-width : 40vw;
     border-bottom-left-radius: 20px;
     box-shadow : -8px 8px 8px #aaa;
@@ -423,6 +439,7 @@ h1
     margin-top: 0.75vw;
     margin-bottom: 0.5vw;
     font-size: 1.5vw;
+    max-width: 15vw;
 }
 
 .arrivant ul ul li
@@ -445,6 +462,47 @@ h1
 {
     margin: 0.75vw 0;
 }
+
+#points
+{
+    text-align: center;
+    display:none;
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.sous_menu {
+    display: none;
+    flex-direction: column;
+    float: left;
+    padding: 0.5vw;
+    margin: 0;
+    margin-top: 2.5vw;
+    position: absolute;
+    z-index: 2;
+    background-color: #00c2cb;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.icon_bar {
+    display: block;
+    padding: 0.8vw;
+    cursor: pointer;
+}
+
+.icon_bar:hover
+{
+    color: white;
+}
+
+.icon_bar + .icon_bar { /* Le + permet de sélectionner les éléments qui suivent */
+    margin-top: 3px;
+}
+
 
 * {box-sizing:border-box}
 
@@ -499,9 +557,9 @@ h1
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 1.5vw;
+  width: 1.5vw;
+  margin: 0 0.5vw;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -529,3 +587,9 @@ h1
   from {opacity: .4} 
   to {opacity: 1}
 } 
+
+@media screen and (max-width: 1000px) {
+    .head {
+      background-size: contain;
+    }
+  }

@@ -1,12 +1,13 @@
 <!DOCTYPE html PUBLIC>
 <html>
 <head>
-  <title>Maintenance TV</title> 
+  <title>WEB Maintenance</title> 
   <meta name="description" content="TV Maintenance"/>    
   <meta name="keywords" content="Maintenance, maintenance, html, css, javascript"/>    
   <meta name="author" content="Bormann Enzo"/>    
   <meta charset="utf-8"/>    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="refresh" content="3600" />
   <link rel="stylesheet" href="maintenance.css">
   <link rel="shortcut icon" href="images/favicon.ico">
 </head>
@@ -16,7 +17,7 @@
 <!--<a href="file:///W:/ENZO%20Licence%20Informatique/Classeur1.xlsx">Lien</a>-->
 
 <!-- Contenu principal -->
-<div class="head"><img src="images/bonhomme.jpg" alt="Logo" id="logo"><h1 id="TV">TV Maintenance</h1>
+<div class="head"><img src="images/Logo_Web3.png" alt="Logo" id="logo"><h1 id="TV"></h1>
 </div>
 <!-- Partie de gauche -->
 <div class="aside_gauche">
@@ -29,9 +30,9 @@
   </div>
   <canvas id="canvas" class="bar_graph2"></canvas>
   <div class="legende">
-    <p style="color:blue"></p>
     <p style="color:orange">Hors délais</p>
-    <p style="color:green">Ouverts prêts</p>
+    <p style="color:#04cf04">Ouverts prêts</p>
+    <p style="color:#0051ff">Autres</p>
   </div>
   <div class="noms">
     <p>Nombre pannes ouvertes</p>
@@ -41,56 +42,70 @@
     <canvas id="canvas1" class="bar_graph"></canvas>
     <canvas id="canvas2" class="bar_graph"></canvas>
   </div>
-  <h1 class="h1SansMargin">Indicateurs maint LVR</h1>
+  <h1 class="h1SansMargin">Indicateurs maint U1</h1>
   <div class="baro">
     <canvas id="canvas3" class="bar_graph"></canvas>
     <canvas id="canvas4" class="bar_graph"></canvas>
   </div>
-  <h1 class="h1SansMargin">Indicateurs maint U1</h1>
+  <h1 class="h1SansMargin">Indicateurs maint U2</h1>
   <div class="baro">
     <canvas id="canvas5" class="bar_graph"></canvas>
     <canvas id="canvas6" class="bar_graph"></canvas>
   </div>
-  <h1 class="h1SansMargin">Indicateurs maint U2</h1>
+  <h1 class="h1SansMargin">Indicateurs maint U3</h1>
   <div class="baro">
     <canvas id="canvas7" class="bar_graph"></canvas>
     <canvas id="canvas8" class="bar_graph"></canvas>
   </div>
-  <h1 class="h1SansMargin">Indicateurs maint U3</h1>
+  <h1 class="h1SansMargin">Indicateurs maint LVR</h1>
   </div>
 <!-- navigation -->
 <div class="navigation">
 <ul class="nav2">
-    <li class="nav"><a class="dif" href="http://delphes/fr/portailSALM/Pages/Default.aspx"><p>Acceuil Portail</p></a>
-    <li class="nav"><a class="dif" href=""><p>Les packs</p></a>
-    <li class="nav"><a class="dif" href=""><p>Les indicateurs</p></a>
-    <li class="nav"><a class="dif" href=""><p>REX/LP</p></a>
+    <li class="nav"><a class="dif" href="http://delphes/fr/portailSALM/Pages/Default.aspx"><p>Accueil Portail</p></a>
+    <li class="nav dif"><p>Les packs</p>
+      <div class="sous_menu">
+        <span class="icon_bar">HOTLINE</span>
+        <span class="icon_bar">FORMATION</span>
+        <span class="icon_bar">MAGASINIER</span>
+      </div>
+    </li>
+    <li class="nav"><a class="dif" href=""><p>REX</p></a>
+    <li class="nav"><a class="dif" href=""><p>LP</p></a>
     <li class="nav"><a class="dif" href=""><p>Infos pratiques</p></a>
 </ul>
 </div>
 <!-- Nouvel arrivant -->
 <div class="arrivant">
-  <div id="text_vertical">ARRIVANT</div>
-  <xml id="fichierxml" src="arrivant.xml"></xml>
-  <table datasrc="#fichierxml"></table>
-  <tr>
+  <div id="text_vertical">
+    <p>A</p>
+    <p>R</p>
+    <p>R</p>
+    <p>I</p>
+    <p>V</p>
+    <p>A</p>
+    <p>N</p>
+    <p>T</p>
+  </div>
+  <ul id="arrivant" style="max-width:15vw">
+  <ul>
   <!-- Ici pour changer les différentes informations -->
-    <td id="NA_Site">Site : <span datafld="site"></span></td>
-    <td id="NA_Date">Date d'éntrée : <span datafld="date"></span></td>
-    <td id="NA_Nom">Nom : BORMANN</td>
-    <td id="NA_Prenom">Prénom : Enzo</td>
-    <td id="NA_Age">Age : 19</td>
-    <td id="NA_Metier">Métier : Stagiaire</td>
-    <td id="NA_Passion">Passion : F1, Tennis, Natation</td>
-  </tr>
-</table>
-  <a href="video.html"><img src="images/portrait.jpg"></a>
+    <li id="NA_Site"></li>
+    <li id="NA_Date"></li>
+    <li id="NA_Nom"></li>
+    <li id="NA_Prenom"></li>
+    <li id="NA_Age"></li>
+    <li id="NA_Metier"></li>
+    <li id="NA_Passion"></li>
+  </ul>
+  </ul>
+  <a><img src="images/portrait.jpg"></a>
 </div>
 <div class="page">
 <div class="news">
 <div class="slideshow-container" id="slideshow">
 
-  <!-- images qui défilent -->
+  <!-- images qui défilent 
   <div class="mySlides fade">
     <img src="images/REX.png" style="width:100%">
   </div>
@@ -105,20 +120,20 @@
 
   <div class="mySlides fade">
     <img src="images/test_ethernet.jpg" style="width:100%">
-  </div>
+  </div>-->
 
   <!-- Boutons souivant et précédents -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(-1)" style="display:none">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)" style="display:none">&#10095;</a>
 </div>
 <br>
 
 <!-- Les poits qui permettent d'accéder aux autres photos !! ATTENTION !! changer le nombre de points si on ajoute/enlève une image -->
-<div style="text-align:center">
+<div id="points"><!--
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>-->
 </div> 
   <!--<img style="display:none" src="transparent-arrow-hi2.png" id="fleche_gauche"><img src="" id="image1"><img style="display:none" src="transparent-arrow-hi.png" id="fleche_droite">
   </div>-->
@@ -136,15 +151,17 @@
   <a class="info" id="planning" href="Planning.html"><img  src="images/Planning.jpg"></a>
   <a class="info" id="documents" href="doc.html"><img  src="images/LP.png"></a>
   -->
-  <a href="file:///\\vsm-file-1\srv_files\DP_Sécurité"><img src="images/Securite.jpg"></a>
-  <a href="file:///\\vsm-file-1\srv_files\DDI\0 Direction\3 Documents de Gestion de Projets\2 CDC et Référentiels de référence"><img src="images/CDC.jpg"></a>
+  <a class="enligne" href="file:///\\vsm-file-1\srv_files\DP_Sécurité"><img src="images/Securite.jpg"><p>Sécurité</p></a>
+  <a class="enligne" href="file:///\\vsm-file-1\srv_files\DDI\0 Direction\3 Documents de Gestion de Projets\2 CDC et Référentiels de référence"><img src="images/CDC.jpg"><p>Cahier des charges</p></a>
   <!--<p>Listing avis</p>
   <p>Doc technique</p>
   <p>Doc machines</p>-->
-  <p><a href="file:///\\vs2-maint-file\Maint\Documents SPS\DMP">Support LP, FOS et FA</a></p>
-  <a href="file:///\\vs2-maint-file\Maint\Documents SPS\DMP Tutoriels Vidéos"><img src="images/LP.png"></a>
-  <a href="file:///\\vs2-maint-file\Maint\Documents SPS\Création"><img src="images/LP_vierge.png"></a>
-  <a href="file:///\\vsm-file-1\srv_files\DP_TPM\Fonctionnement TPM "><img src="images/TPM.jpg"></a>
+  <a class="enligne" href="file:///\\vs2-maint-file\Maint\Documents SPS"><img src="images/document.png"><p>Documents SPS</p></a>
+  <a class="enligne" href="file:///\\vsm-file-1\srv_files\DP_Maintenance\Annuaire.xlsm "><img src="images/annuaire.jpg"><p>Annuaire</p></a>
+  <a class="enligne" href="file:///\\vsm-file-1\srv_files\DP_Maintenance\3 Communication Maintenance\1 Processus Maintenance "><img src="images/processus.jpg"><p>Processus</p></a>
+  <a class="enligne" href="file:///\\vs2-maint-file\Maint\Documentation machines"><img src="images/Doc_machine.jpg"><p>Documents machines</p></a>
+  <a class="enligne" href="file:///\\vs2-maint-file\Maint\Documentation technique"><img src="images/Doc_technique.jpg"><p>Documents technique</p></a>
+  <a class="enligne" href="file:///\\vsm-file-1\srv_files\DP_TPM\Fonctionnement TPM "><img src="images/TPM.jpg"><p>TPM</p></a>
   <!--<p><a href="https://vsmprogtwsql.salm.int:43000/sap/bc/ui5_ui5/ui2/ushell/shells/abap/Fiorilaunchpad.html">FIORI</a></p>
   <p><a href="file:///\\vsm-file-1\srv_files\DP_Maintenance\4 Rapports GMAO & Gestion OTs\Avis Ordres Maintenance\Monté">Liste d'OT monté</a></p>
   <p><a href="file:///\\vsm-file-1\srv_files\DP_Maintenance\4 Rapports GMAO & Gestion OTs\Avis Ordres Maintenance\Panneaux">Liste d'OT panneaux</a></p>
@@ -191,111 +208,185 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>  
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
 <script type="text/javascript">
-//javscript pour les fichiers XML
- $ajax({});
-/*if (window.XMLHttpRequest)
+
+var bouton = document.getElementsByClassName('nav')[1];
+bouton.addEventListener("mouseover", function(){
+  document.getElementsByClassName('sous_menu')[0].style.display="flex";
+})
+
+bouton.addEventListener("mouseout", function(){
+  document.getElementsByClassName('sous_menu')[0].style.display="none";
+})
+bouton.addEventListener("mouseover", function(){
+  document.getElementsByClassName('sous_menu')[0].style.display="flex";
+})
+//Changer les paramètres en fonction du navigateur utilisé
+var navigateur = navigator.userAgent;
+var est_ce_Edge = navigateur.indexOf("Edge");
+if (est_ce_Edge != -1) //si le navigateur est Edge
 {
-  xmlhttp = new XMLHttpRequest();
+  var arrivant = document.getElementById("text_vertical");
+  //arrivant.style.display = "none";
+  document.getElementById("arrivant").style.margin = "0.75vw auto 0.5vw 1vw"
+  var nav = document.getElementsByClassName("navigation")
+  nav[0].style.width = "50vw";
+  document.getElementsByClassName("navigation")[0].style.width = null;
+  document.getElementsByClassName("navigation")[0].style.width = "49vw";
 }
-xmlhttp.open("GET","arrivant.xml",false);
-xmlhttp.send();
-xmldoc = xmlhttp.responseXML;
 
-document.getElementById("NA_Site").innerHTML = xmldoc.getElementsByTagName("site")[0].childNodes[0].nodeValue;*/
-
-//------------------------------------------------------------------------------------------------------------------
 //Recherche des valeurs pour les indicateurs
-  var x1 = 150;
-var y1 = 144;
-var x2 = 208;
-var y2 = 134
-
+var indice_tableau = ["0","4","2","6","1","5","3","7","8","9","10","11","12","13","14","15","16","17","18","19"]; //indice des tableau en fonction de la position des valeurs dnas le tableau EXCEL indicateurs
 var indice_tab = 0;
-var aiguilleX = ["87","87.5","89","92","95","103","113","123","133","143","152","161","170","179","188","199","202","205","208","213"]
-var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","82","83","87","93","104","114","124","134","144"]
+var aiguilleX = ["87","87.5","89","92","95","103","113","123","133","143","151","161","170","179","188","199","202","205","208","213"] //position en X de l'aiguille des baromètres
+var aiguilleY = ["144","136","128","120","112","104","93","87","83","82","81","82","83","87","93","104","114","124","134","144"] //position en Y de l'aiguille des baromètres
+var max = ["+20","+40"]; //valeurs maximum des 2 baromètres
+var inter = [10,20]; //valeurs intermédiaires des 2 baromètres
+var quart1 = [5,10]; //valeurs du premier quart des 2 baromètres
+var quart2 = [15,30]; //valeurs dernier quart des 2 baromètres
+var rayon = 100; //rayon des 2 baromètres
+var valeurs;
+var z = 0; //indice pour remplir le tableau extrait d'un fichier JS
+var ordres = 0; //initialisation nombres des autres ordres
+var ordres_prêts = 0; //initialisation nombre d'ordres ouverts prêts
+var ordres_hors_delais = 0; //initialisation nombre d'ordres hors-délais
+var proportion_ordres_prêts = 0; //initialisation de la proportion d'ordres prêts
+var proportion_ordres_hors_delais = 0; //initialisation de la proportion d'ordres hors-délais
+var proportion_ordres = 0 //initialisation de la proportion des autres ordres
+var number = ["0","1","2","3","4","5","6","7","8","9"]; //table de référence des nombres 
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",".","_",","," ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //table de référence des lettres + . + _ + , 
+var decoupage = [];
+var present = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
 
-  var tab = [65,225];
-  var tab2 = [33,175];
-  var max = ["35","75"];
-  var inter = [10,30];
-  var rayon = 100;
-var url = "Indicateurs2.xlsx";
+indicateurs();
+
+//transformation de la feuille excel indicateurs_portail_maintenance en JSON pour être exploitable par JS
+function indicateurs()
+{
+valeurs = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]; //remise à vide du tableau des valeurs pour éviter un de mauvaises valeurs
+var url = "Indicateurs_portail_maintenance.xlsx"; //nom du fichier contenant les chiffres pour les indicateurs (à changer si le nom change)
 var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
-var valeurs = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
-var z = 0;
-var ordres = 0;
-var ordres_ouverts = 0;
-var ordres_fermés = 0;
-var proportion_ordres_ouverts = 0;
-var proportion_ordres_fermés = 0;
-var proportion_ordres = 0
-var number = ["0","1","2","3","4","5","6","7","8","9"];
-var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 oReq.onload = function(e) {
 var arraybuffer = oReq.response;
 
-// convert data to binary string 
+//convertir des valeurs en liste binaire 
 var data = new Uint8Array(arraybuffer);
 var arr = new Array();
 for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
 var bstr = arr.join("");
 
-// Call XLSX
+// appel du XLSX
 var workbook = XLSX.read(bstr, {
     type: "binary"
 });
 
-// DO SOMETHING WITH workbook HERE
+// travailler avec les worksheet
 var first_sheet_name = workbook.SheetNames[0];
 
-// Get worksheet
+// avoir le worksheet
 var worksheet = workbook.Sheets[first_sheet_name];
-var test4 = XLSX.utils.sheet_to_json(worksheet, {
+var json_1 = XLSX.utils.sheet_to_json(worksheet, {
     raw: true
 });
-var test2 = (JSON.stringify(test4,null,2));
-var test = JSON.stringify(test2);
-valeurs  = transformation_value_json_to_table(test);
+var json_2 = (JSON.stringify(json_1,null,2));
+var json_stringify = JSON.stringify(json_2);
+var val_decoupage = coupe_json(json_2)
+var q = 0;
+for (let n = 0 ; n < (val_decoupage.length)-1 ; n++)
+{
+  let verif = [];
+  for (let g = val_decoupage[n] ; g < val_decoupage[n+1] ; g++)
+  {
+    verif += json_2[g]
+  }
+  for ( let p = 2 ; p < 6 ; p++ )
+  {
+    if (verif.indexOf("EMPTY_" + p) == -1)
+    {
+      present[q] = false;
+    }
+    q++
+  }
+}
+
+valeurs  = transformation_value_json_to_table(json_2,present);
+console.log(valeurs)
 
 var canvas = document.getElementsByClassName('bar_graph');
 var l = 0;
-
 //dessin des différents indicateurs
+for(let j = 0 ; j < canvas.length ; j++)
+{
+  var ctx = canvas[j].getContext('2d');
+  clear_rectangle(ctx,canvas)
+}
 for (var i = 0 ; i < canvas.length ; i++)
 {
     var ctx = canvas[i].getContext('2d');
-    /*var index2 = 0;
-    var x1 = test[i];
-    var x2 = parseFloat(x[x1])+70;
-    var y2 = y[x1];*/
-    dessine_graph(valeurs,l,ctx);
+    dessine_graph(valeurs,l,ctx,canvas);
     l++;
 }
 
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var b = 8;
-
+//nettoyer l'ancien bar graph
+clear_rectangle(ctx,canvas)
+//fonction qui cherche le maxime d'ordres par usines
+function max_somme_ordres_usines(valeurs)
+{
+  let b = 8;
+  var somme = 0;
+  var somme1 = 0;
+  for (let a = 0 ; a < 4 ; a++)
+  {
+    somme1 = Number.parseInt(valeurs[b]) + Number.parseInt(valeurs[b+4]) + Number.parseInt(valeurs[b+8]);
+    if (a%2 == 0)
+      b += 2
+    else if (a%2 == 1)
+      b -= 1
+    if (somme < somme1)
+      somme = somme1
+  }
+  return somme
+}
+var maximum = max_somme_ordres_usines(valeurs)
 for (let a = 0 ; a < 4 ; a++)
 {
   ordres = valeurs[b];
-  ordres_ouverts = valeurs[b+1];
-  ordres_fermés = valeurs[b+2];
-  b += 3;
-  dessine_bar_graph(a,ctx);
+  ordres_prêts = valeurs[b+4];
+  ordres_hors_delais = valeurs[b+8];
+  if (a%2 == 0)
+    b += 2
+  else if (a%2 == 1)
+    b -= 1
+  dessine_bar_graph(a,ctx,canvas,maximum);
 }
-        }
+}
 oReq.send();
+var now = new Date()
+  if (now.getMinutes() == 1)
+  {
+    setTimeout(indicateurs,3600)
+  }
+  else
+  {
+    console.log("Je dois me voir")
+    var now = new Date()
+    var heure = now.getMinutes()
+    var minutes = 60 - heure;
+    console.log(minutes)
+    setTimeout(indicateurs,1000*60*(minutes + 3))
+  }
+}
 
 //extraire les différentes données d'un fichier json
-function transformation_value_json_to_table(json)
+function transformation_value_json_to_table(json,present)
 {
+  z = 0;
     var i = 1;
     while(json[i]!="]")
     {
@@ -304,79 +395,331 @@ function transformation_value_json_to_table(json)
     var taille = i+2;
     for (let j=0;j<taille;j++)
     {
-        if (json[j] == "\"")
+      if (present[z] == true)
         {
-            if (json[j+1] == ":")
+          if (json[j] == ":")
+        {
+            if (!(isNaN(json[j+2])))
             {
-                var taille2 = parseInt(j)+3;
+                var taille2 = parseInt(j)+2;
             
                 while (est_dans(number,json[taille2]))
                 {
                     valeurs[z] += json[taille2];
                     taille2++;
-                }  
-                z++;  
+                }
+                if (!(isNaN(valeurs[z])) || valeurs[z] == null )  
+                  z++;  
             }
+        }
+          }
+        else if (present[z] == false)
+        {
+          valeurs[z] = "0";
+          z++
         }
     }
   return valeurs;
 }
 
+function coupe_json(json)
+{
+  let y = 0;
+  for (var m = 0; m < json.length ; m++)
+  {
+    if (json[m]=="N")
+    {
+      if (json[m+1]=="b")
+      {
+        decoupage[y] = m;
+        y++
+      }
+    }
+  }
+  decoupage[y] = json.length;
+  return decoupage;
+}
+
+//fonction de vérification si un élément appartient à une table
 function est_dans(tab,x)
 {
-    for(let k=0;k<30;k++)
+    for(let k=0;k<tab.length;k++)
     {
         if (x == tab[k])
             return true
     }
     return false
 }
-//--------------------------------------------------------------------------------------------------------------------------------------------
-//calculs proportions bar graph
 
-function proportion()
-{
-  proportion_ordres = ordres / 900;
-  proportion_ordres_ouverts = ordres_ouverts / 900;
-  proportion_ordres_fermés = ordres_fermés/900;
+//------------------------------------------------------------------------------------------------------------------------------------------
+//transformation de la feuille excel images en JSON pour être exploitable par JS
+var url2 = "images.xlsx";
+var oReq2 = new XMLHttpRequest();
+oReq2.open("GET", url2, true);
+oReq2.responseType = "arraybuffer";
+var valeurs2 = new Array();
+
+oReq2.onload = function(e) {
+var arraybuffer2 = oReq2.response;
+
+//convertir des valeurs en liste binaire 
+var data2 = new Uint8Array(arraybuffer2);
+var arr2 = new Array();
+for (var i = 0; i != data2.length; ++i) 
+arr2[i] = String.fromCharCode(data2[i]);
+var bstr2 = arr2.join("");
+
+// appel du XLSX
+var workbook2 = XLSX.read(bstr2, {
+    type: "binary"
+});
+
+// travailler avec les worksheet
+var first_sheet_name2 = workbook2.SheetNames[0];
+
+// avoir le worksheet
+var worksheet2 = workbook2.Sheets[first_sheet_name2];
+var test42 = XLSX.utils.sheet_to_json(worksheet2, {
+    raw: true
+});
+var test22 = (JSON.stringify(test42,null,2));
+var test23 = JSON.stringify(test22);
+valeurs2 = transformation_text_json_to_table(test23);
+ajout_images(valeurs2);
+var slides = document.getElementsByClassName("mySlides");
+carousel(slides);
 }
 
-function dessine_bar_graph(i,ctx)
+function transformation_text_json_to_table(test23)
+{
+  var e = 0;
+  for (let f=0 ; f < test23.length ; f++)
+  {
+    if(test23[f] == "\"")
+    {
+      if (est_dans(alphabet,test23[f+1]))
+      {
+        var c = 1;
+        while(est_dans(alphabet,test23[f+c]) || est_dans(number,test23[f+c]))
+        {
+          if (c == 1)
+            valeurs2[e] = test23[f+c]
+          else
+            valeurs2[e] += test23[f+c];
+          c++;
+        }
+        if(valeurs2[e] != ("photo"))
+          e++;
+      }
+    }
+  }
+  return valeurs2;
+}
+
+oReq2.send();
+
+//fonction qui ajoute les images
+function ajout_images(valeurs2)
+{
+  var elt2 = document.createElement("div");
+    elt2.setAttribute("id","deuxieme");
+    document.getElementById("slideshow").appendChild(elt2);
+  for (let h = 0 ; h < valeurs2.length ; h++)
+  {
+    /*if (!valeurs2[h].indexOf("REX"))
+    {
+      let elt1 = document.createElement("a");
+    elt1.setAttribute("class","mySlides fade");
+    elt1.setAttribute("id","image"+h);
+    elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
+    document.getElementById("slideshow").appendChild(elt1);
+    let elt = document.createElement("img");
+    elt.setAttribute("src","images/"+valeurs2[h]);
+    elt.setAttribute("style","width:100%")
+    document.getElementById("image"+h).appendChild(elt);
+    let dots = document.createElement("span");
+    dots.setAttribute("class","dot");
+    let index = h+1;
+    dots.setAttribute("onclick","currentSlide("+index+")")
+    document.getElementById("points").appendChild(dots);
+    }*/
+      if (!valeurs2[h].indexOf("REX"))
+      {
+        var elt1 = document.createElement("a");
+        elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
+      }
+      else if (!valeurs2[h].indexOf("LP"))
+      {
+        var elt1 = document.createElement("a");
+        elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
+      }
+      else
+      {
+        var elt1 = document.createElement("div");
+      }
+    
+    elt1.setAttribute("class","mySlides");
+    elt1.setAttribute("id","image"+h);
+    document.getElementById("deuxieme").appendChild(elt1);
+    let elt = document.createElement("img");
+    elt.setAttribute("src","images/"+valeurs2[h]);
+    elt.setAttribute("style","width:100%")
+    document.getElementById("image"+h).appendChild(elt);
+    let dots = document.createElement("span");
+    dots.setAttribute("class","dot");
+    let index = h+1;
+    dots.setAttribute("onclick","currentSlide("+index+")")
+    document.getElementById("points").appendChild(dots);
+  }
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+//transformation de la feuille excel arrivant en JSON pour être exploitable par JS
+var url3 = "arrivant.xlsx";
+var oReq3 = new XMLHttpRequest();
+oReq3.open("GET", url3, true);
+oReq3.responseType = "arraybuffer";
+var valeurs3 = new Array();
+
+oReq3.onload = function(e) {
+var arraybuffer3 = oReq3.response;
+
+//convertir des valeurs en liste binaire 
+var data3 = new Uint8Array(arraybuffer3);
+var arr3 = new Array();
+for (var i = 0; i != data3.length; ++i) 
+arr3[i] = String.fromCharCode(data3[i]);
+var bstr2 = arr3.join("");
+
+// appel du XLSX
+var workbook3 = XLSX.read(bstr2, {
+    type: "binary"
+});
+
+// travailler avec les worksheet
+var first_sheet_name3 = workbook3.SheetNames[0];
+
+// avoir le worksheet
+var worksheet3 = workbook3.Sheets[first_sheet_name3];
+var json_text = XLSX.utils.sheet_to_json(worksheet3, {
+    raw: true
+});
+var arr_string1 = (JSON.stringify(json_text,null,2));
+var arr_string2 = JSON.stringify(arr_string1);
+valeurs3 = transformation_text_json_to_table_arrivant(arr_string2);
+ajout_nv_arrivant(valeurs3);
+}
+
+oReq3.send()
+
+function transformation_text_json_to_table_arrivant(test23)
+{
+  let e = 0;
+  for (let f=0 ; f < test23.length ; f++)
+  {
+    if(test23[f] == "\"")
+    {
+      if (est_dans(alphabet,test23[f+1]) || est_dans(number,test23[f+1]))
+      {
+        let c = 1;
+        while(est_dans(alphabet,test23[f+c]) || est_dans(number,test23[f+c]))
+        {
+          if (c == 1)
+            valeurs3[e] = test23[f+c]
+          else
+            valeurs3[e] += test23[f+c];
+          c++;
+        }
+        if((valeurs3[e] != ("ARRIVANT")) && (valeurs3[e] != ("Arrivant")))
+          e++;
+        f += c;
+      }
+    }
+    else if (est_dans(number,test23[f]))
+    {
+      let c = 0;
+        while(est_dans(number,test23[f+c]))
+        {
+          if (c == 0)
+            valeurs3[e] = test23[f+c]
+          else
+            valeurs3[e] += test23[f+c];
+          c++;
+        }
+        if((valeurs3[e] != ("ARRIVANT")) && (valeurs3[e] != ("Arrivant")))
+          e++;
+        f += c;
+    }
+  }
+  return valeurs3;
+}
+
+
+function ajout_nv_arrivant(valeurs3)
+{
+  let h = 0;
+    document.getElementById("NA_Site").textContent = "Site : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Date").textContent = "Date : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Nom").textContent = "Nom : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Prenom").textContent = "Prénom : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Age").textContent = "Age : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Metier").textContent = "Metier : " + valeurs3[h];
+    h++;
+    document.getElementById("NA_Passion").textContent = "Passion : " + valeurs3[h];
+    h++;
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+//calculs proportions bar graph
+//fonction qui calcul la proportion de chaque ordres en fonction de l'usine
+function proportion(maximum)
+{
+  proportion_ordres = ordres / maximum;
+  proportion_ordres_prêts = ordres_prêts / maximum;
+  proportion_ordres_hors_delais = ordres_hors_delais/maximum;
+}
+
+function dessine_bar_graph(i,ctx,canvas,maximum)
 {
   //calcul de la proportion pour chaques couches du graph
-  proportion();
+  proportion(maximum);
   //écriture de l'échelle
-  if (i == 0)
+  if (i == 0) //uniquement lors du premier passage
   {
     ctx.beginPath()
     ctx.font = '0.9vw serif';
     ctx.fillStyle = 'black';
-    ctx.fillText('900', 10, 10);
-    ctx.fillText('450', 10, 79);
-    ctx.fillText('900', 10, 10);
-    ctx.fillText('450', 10, 79);
+    ctx.fillText(maximum, 10, 10);
+    ctx.fillText(Number.parseInt(maximum/2), 10, 79);
+    ctx.fillText(maximum, 10, 10);
+    ctx.fillText(Number.parseInt(maximum/2), 10, 79);
     ctx.stroke();
     ctx.beginPath();
     ctx.strokeStyle = 'black';
     ctx.lineWidth = '3';
-    ctx.moveTo(35,2);
+    ctx.moveTo(40,2);
     ctx.lineTo(297,2);
     ctx.stroke();
-    ctx.moveTo(35,71);
-    ctx.lineTo(297,71);
+    ctx.moveTo(40,71);
+    ctx.lineTo(302,71);
     ctx.stroke();
     ctx.restore();
   }
   var maximale = 150; //taille maximale en pixel
-  var hauteurmax = maximale - (proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale + proportion_ordres * maximale)
-  var hauteur3 = proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale + proportion_ordres * maximale
-  var hauteur2 =  proportion_ordres_fermés * maximale + proportion_ordres_ouverts * maximale
-  var hauteur1 =  proportion_ordres_fermés * maximale;
+  var hauteurmax = maximale - (proportion_ordres_hors_delais * maximale + proportion_ordres_prêts * maximale + proportion_ordres * maximale)
+  var hauteur3 = proportion_ordres_hors_delais * maximale + proportion_ordres_prêts * maximale + proportion_ordres * maximale
+  var hauteur2 = proportion_ordres_hors_delais * maximale + proportion_ordres_prêts * maximale
+  var hauteur1 = proportion_ordres_hors_delais * maximale;
   var hauteurDep = [hauteurmax,hauteurmax+hauteur1,hauteurmax+hauteur2]; //hauteur de départ des différentes couches du graph
   var hauteur = [hauteurmax+hauteur1,hauteurmax+hauteur2,hauteurmax+hauteur3]; //hauteur de final de différentes couches du graph
-  var couleur = ['green','orange','blue']; //couleurs des différentes couches
-  var positionX = [51,112,175,242]; // position des barres
-  //dessin des barres
+  var couleur = ['#04cf04',"#0051ff",'orange']; //couleurs des différentes couches
+  var positionX = [51,112,175,242]; // position horizontale des barres
+  //dessin du bar graph
   for (let j = 0 ; j<hauteur.length; j++)
   {
     ctx.beginPath();
@@ -394,17 +737,24 @@ function dessine_bar_graph(i,ctx)
     ctx.stroke();
    }
 }
+
+function clear_rectangle(ctx,canvas)
+{
+  ctx.clearRect(0,0,canvas.width,canvas.height)
+  ctx.closePath()
+}
+
 //---------------------------------------------------------------------------------------------------------------------------------
 
 var slideIndex = 0;
-var interval = 3; //temps de changement de chaque diapo
+var interval = 5; //temps de changement de chaque diapo
 var stopCarousel = false;
 var timeOut;
+var dessus_image;
 
-carousel();
 
 //fonction qui permet de faire défiler les images
-function carousel() {
+function carousel(slides) {
   if (!stopCarousel)
   {
   var i;
@@ -431,19 +781,21 @@ function carousel() {
   }
 }
 
-showSlides(slideIndex);
+//showSlides(slideIndex,slides);
 
 // Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusSlides(n,slides) {
+  showSlides(slideIndex += n,slides);
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function currentSlide(n,slides) {
+  showSlides(slideIndex = n,slides);
 }
 
-function showSlides(n) {
+function showSlides(n,slides) {
+  if (!dessus_image)
+    clearTimeout(timeOut);
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
@@ -465,128 +817,44 @@ function showSlides(n) {
     }
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
+  /*if (!dessus_image)
+    timeOut = setTimeout(carousel, interval*1000);*/
+  dessus_image = false
 } 
 
-var timeOut2 = 0;
 var slideAct = document.getElementById("slideshow");
+
 slideAct.addEventListener("mouseover",function(){
   clearTimeout(timeOut);
   document.getElementsByClassName("next")[0].style.background = "rgba(0,0,0,0.8)";
   document.getElementsByClassName("prev")[0].style.background = "rgba(0,0,0,0.8)";
+  document.getElementsByClassName("next")[0].style.display = "";
+  document.getElementsByClassName("prev")[0].style.display = "";
+  dessus_image = true
 });
 
 slideAct.addEventListener("mouseout", function(){
+  document.getElementsByClassName("next")[0].style.display = "none";
+  document.getElementsByClassName("prev")[0].style.display = "none";
   document.getElementsByClassName("next")[0].style.background = "";
   document.getElementsByClassName("prev")[0].style.background = "";
   timeOut = setTimeout(carousel, interval*1000);
+});
+
+var news = document.getElementsByClassName("news")[0];
+
+news.addEventListener("mouseover", function(){
+  document.getElementById("points").style.display = "block";
+});
+
+news.addEventListener("mouseout", function(){
+  document.getElementById("points").style.display = "none";
 });
 
 //point en x de l'aiguille
 var x = ["35","35","35","36","37","38.5","40","42","44","45","49","53","58","61","65","69","74","78","83","88","92","97","101","105","108","113","117","121","122","124","126","127.5","129","130","131","131","131"];
 //point en y de l'aiguille
 var y = ["95","91.5","88","84.5","81","77.5","74","70.5","67","65","61.5","58","54.5","53","51","50","49","48","48","48","49","50","51","53","54.5","58","61.5","65","67","70.5","74","77.5","81","84.5","88","91.5","95"];
-
-//----------------------------------------------------------------------------------------------------------------------------------
-
-//partie de la recherche d'infos dans le classeur excel
-
-function UploadProcess() {
-  //Reference the FileUpload element.
-  var fileUpload = document.getElementById("fileUpload");
-  var fichier = "Indicateurs2.xlsx";
-  //Validate whether File is valid Excel file.
-  var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xlsx)$/;
-  if (regex.test(fileUpload.value.toLowerCase())) {
-      if (typeof (FileReader) != "undefined") {
-          var reader = new FileReader();
-
-          //For Browsers other than IE.
-          if (reader.readAsBinaryString) {
-              reader.onload = function (e) {
-                  GetTableFromExcel(e.target.result);
-              };
-              reader.readAsBinaryString(fileUpload.files[0]);
-          } else {
-              //For IE Browser.
-              reader.onload = function (e) {
-                  var data = "";
-                  var bytes = new Uint8Array(e.target.result);
-                  for (var i = 0; i < bytes.byteLength; i++) {
-                      data += String.fromCharCode(bytes[i]);
-                  }
-                  GetTableFromExcel(data);
-              };
-              reader.readAsArrayBuffer(fileUpload.files[0]);
-          }
-      } else {
-          alert("This browser does not support HTML5.");
-      }
-  } else {
-      alert("Please upload a valid Excel file.");
-  }
-};
-function GetTableFromExcel(data) {
-  //Read the Excel File data in binary
-  var workbook = XLSX.read(data, {
-      type: 'binary'
-  });
-
-  //get the name of First Sheet.
-  var Sheet = workbook.SheetNames[0];
-
-  //Read all rows from First Sheet into an JSON array.
-  var excelRows = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[Sheet]);
-
-  //Create a HTML Table element.
-  var myTable  = document.createElement("table");
-  myTable.border = "1";
-
-  //Add the header row.
-  var row = myTable.insertRow(-1);
-
-  //Add the header cells.
-  var headerCell = document.createElement("TH");
-  headerCell.innerHTML = "PA_U1";
-  row.appendChild(headerCell);
-
-  headerCell = document.createElement("TH");
-  headerCell.innerHTML = "PA_U2";
-  row.appendChild(headerCell);
-  
-  /*headerCell = document.createElement("TH");
-  headerCell.innerHTML = "Age";
-  row.appendChild(headerCell);
-   
-  headerCell = document.createElement("TH");
-  headerCell.innerHTML = "Num";
-  row.appendChild(headerCell);*/
-  var row = myTable.insertRow(-1);
-  cell = row.insertCell(-1);
-  document.write(excelRows[0].PA_U1);
-  //Add the data rows from Excel file.
-  /*for (var i = 0; i < excelRows.length; i++) {
-      //Add the data row.
-      var row = myTable.insertRow(-1);
-
-      //Add the data cells.
-      var cell = row.insertCell(-1);
-      cell.innerHTML = excelRows[i].Nom;
-
-      cell = row.insertCell(-1);
-      cell.innerHTML = excelRows[i].Prénom;
-      
-      cell = row.insertCell(-1);
-      cell.innerHTML = excelRows[i].Age;
-      
-      cell = row.insertCell(-1);
-      cell.innerHTML = excelRows[i].Num;
-  }
-  
-
-  var ExcelTable = document.getElementById("ExcelTable");
-  ExcelTable.innerHTML = "";
-  ExcelTable.appendChild(myTable);*/
-};
 
 //-----------------------------------------------------------------------------------------------------------------------------
 
@@ -597,7 +865,31 @@ function calcul_longueur(x1,y1,x2,y2)
   return Math.sqrt(((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1)))
 };
 
-function dessine_graph(valeurs,i,ctx)
+function Norm(xA,yA,xB,yB) {
+  return Math.sqrt(Math.pow(xB-xA,2)+Math.pow(yB-yA,2));
+} 
+
+function Vecteur (xA,yA,xB,yB,ArrowLength,ArrowWidth,ctx) {
+  xA = parseFloat(xA) 
+  yA = parseFloat(yA)
+  xB = parseFloat(xB)
+  yB = parseFloat(yB)
+  if (ArrowLength === undefined) {ArrowLength=10;} 
+  if (ArrowWidth === undefined) {ArrowWidth=8;} 
+  ctx.lineCap="round"; 
+// Calculs des coordonnées des points C, D et E 
+  AB=Norm(xA,yA,xB,yB); 
+  xC=xB+ArrowLength*(xA-xB)/AB;yC=yB+ArrowLength*(yA-yB)/AB; 
+  xD=xC+ArrowWidth*(-(yB-yA))/AB;yD=yC+ArrowWidth*((xB-xA))/AB; 
+  xE=xC-ArrowWidth*(-(yB-yA))/AB;yE=yC-ArrowWidth*((xB-xA))/AB; 
+  // et on trace le segment [AB], et sa flèche: 
+  ctx.beginPath(); 
+  ctx.moveTo(xA,yA);ctx.lineTo(xB,yB); 
+  ctx.moveTo(xD,yD);ctx.lineTo(xB,yB);ctx.lineTo(xE,yE); 
+  ctx.stroke(); 
+} 
+
+function dessine_graph(valeurs,i,ctx,canvas)
 {
     //dessin du quart rouge
     ctx.beginPath();
@@ -634,12 +926,12 @@ function dessine_graph(valeurs,i,ctx)
     ctx.restore();
 
     ctx.beginPath();
-    ctx.strokeStyle = 'green';
+    ctx.strokeStyle = '#00c427';
     ctx.arc(150,150,100,Math.PI,(5/4)*Math.PI);
     ctx.stroke();
     ctx.lineTo(150,150);
     ctx.stroke();
-    ctx.fillStyle = "green"
+    ctx.fillStyle = "#00c427"
     ctx.fill();
     ctx.stroke();
     ctx.restore();
@@ -653,70 +945,42 @@ function dessine_graph(valeurs,i,ctx)
     ctx.closePath();
     if (i%2 == 0)
     {
-      if (valeurs[i]>15)
-        {
-          if (valeurs[i] <= 22)
-            indice_tab = 16
-          else if (valeurs[i] <= 27)
-            indice_tab = 17
-          else if (valeurs[i] <= 32)
-            indice_tab = 18
-          else
-            indice_tab = 19
-        }
-        else
-        {
-          indice_tab = valeurs[i]
-        }
+      indice_tab = valeurs[indice_tableau[i]]
     }
     if (i%2 == 1)
     {
-      if (valeurs[i] <= 47)
+      if (valeurs[indice_tableau[i]] < 40)
       {
-        indice_tab = Math.trunc(valeurs[i] / 3)
+        indice_tab = Math.trunc(valeurs[indice_tableau[i]] / 2)
       }
       else
       {
-        if (valeurs[i] <= 56)
-          indice_tab = 16
-        else if (valeurs[i] <= 64)
-          indice_tab = 17
-        else if (valeurs[i] <= 71)
-          indice_tab = 18
-        else
-          indice_tab = 19
+        indice_tab = 19
       }
     }
-    ctx.beginPath();
-    ctx.moveTo(150,144),
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = "15";
-    ctx.lineTo(aiguilleX[indice_tab],aiguilleY[indice_tab]);
-    ctx.stroke();
-    ctx.restore();
 
     ctx.beginPath();
     ctx.strokeStyle = 'white';
-    ctx.lineWidth = "4";
-    ctx.arc(150,150,100,Math.PI,2*Math.PI);
-    ctx.stroke();
+    ctx.lineWidth = "3";
+    /*ctx.arc(150,150,100,Math.PI,2*Math.PI);
+    ctx.stroke();*/
     ctx.lineTo(0,150);
     ctx.stroke();
     ctx.restore();
 
-    ctx.font = '2.2vw serif';
+    ctx.clearRect(1,1,canvas.width,canvas.height)
+    ctx.font = '1.5vw serif';
     ctx.fillStyle = 'black';
-    ctx.fillText(inter[i%2], 135, 30);
-    ctx.fillText(max[i%2], 255, 150);
-    ctx.fillText('0',20,150);
+    ctx.fillText('0',30,150);
+    ctx.fillText(quart1[i%2], 50, 80);
+    ctx.fillText(inter[i%2], 138, 40);
+    ctx.fillText(quart2[i%2], 225, 80);
+    ctx.fillText(max[i%2], 256, 150);
     ctx.restore();
 
-    ctx.font = '2.2vw serif';
-    ctx.fillStyle = 'black';
-    ctx.fillText(inter[i%2], 135, 30);
-    ctx.fillText(max[i%2], 255, 150);
-    ctx.fillText('0',20,150);
-    ctx.restore();
+    ctx.strokeStyle = 'black';   
+    ctx.lineWidth = "6";
+    Vecteur(151,144,aiguilleX[indice_tab],aiguilleY[indice_tab],10,9,ctx);
   };
    
 </script>

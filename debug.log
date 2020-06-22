@@ -1,0 +1,13 @@
+[0617/093326.593:ERROR:process_info.cc(329)] VirtualQueryEx: Accès refusé. (0x5)
+[0617/093326.602:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0617/093326.604:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
+[0617/093337.492:ERROR:process_info.cc(329)] VirtualQueryEx: Accès refusé. (0x5)
+[0617/093337.494:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0617/093337.495:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0617/093337.497:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
+[0617/093439.276:ERROR:process_info.cc(329)] VirtualQueryEx: Accès refusé. (0x5)
+[0617/093439.278:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0617/093439.279:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
+[0617/093458.573:ERROR:process_info.cc(329)] VirtualQueryEx: Accès refusé. (0x5)
+[0617/093458.574:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0617/093458.576:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
