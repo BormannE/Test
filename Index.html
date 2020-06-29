@@ -483,6 +483,8 @@ var test42 = XLSX.utils.sheet_to_json(worksheet2, {
     raw: true
 });
 var test22 = (JSON.stringify(test42,null,2));
+var essai = JSON.parse(test22)
+console.log("mon test = " + essai[0].source)
 var test23 = JSON.stringify(test22);
 valeurs2 = transformation_text_json_to_table(test23);
 ajout_images(valeurs2);
@@ -526,23 +528,6 @@ function ajout_images(valeurs2)
     document.getElementById("slideshow").appendChild(elt2);
   for (let h = 0 ; h < valeurs2.length ; h++)
   {
-    /*if (!valeurs2[h].indexOf("REX"))
-    {
-      let elt1 = document.createElement("a");
-    elt1.setAttribute("class","mySlides fade");
-    elt1.setAttribute("id","image"+h);
-    elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
-    document.getElementById("slideshow").appendChild(elt1);
-    let elt = document.createElement("img");
-    elt.setAttribute("src","images/"+valeurs2[h]);
-    elt.setAttribute("style","width:100%")
-    document.getElementById("image"+h).appendChild(elt);
-    let dots = document.createElement("span");
-    dots.setAttribute("class","dot");
-    let index = h+1;
-    dots.setAttribute("onclick","currentSlide("+index+")")
-    document.getElementById("points").appendChild(dots);
-    }*/
       if (!valeurs2[h].indexOf("REX"))
       {
         var elt1 = document.createElement("a");
