@@ -489,7 +489,7 @@ console.log(essai[2].photo)
 console.log(essai[2].source)
 var test23 = JSON.stringify(test22);
 valeurs2 = transformation_text_json_to_table(test23);
-ajout_images(valeurs2);
+ajout_images(valeurs2,essai);
 var slides = document.getElementsByClassName("mySlides");
 carousel(slides);
 }
@@ -523,7 +523,7 @@ function transformation_text_json_to_table(test23)
 oReq2.send();
 
 //fonction qui ajoute les images
-function ajout_images(valeurs2)
+function ajout_images(valeurs2,essai)
 {
   var elt2 = document.createElement("div");
     elt2.setAttribute("id","deuxieme");
@@ -539,6 +539,11 @@ function ajout_images(valeurs2)
       {
         var elt1 = document.createElement("a");
         elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
+      }
+      else if (essai[h].source != undefined)
+      {
+        var elt1 = document.createElement("a");
+        elt1.setAttribute("href",essai[h].source);
       }
       else
       {
