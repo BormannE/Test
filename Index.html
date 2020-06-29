@@ -484,9 +484,9 @@ var test42 = XLSX.utils.sheet_to_json(worksheet2, {
 });
 var test22 = (JSON.stringify(test42,null,2));
 var essai2 = JSON.parse(test22)
-console.log(essai)
-console.log(essai[2].photo)
-console.log(essai[2].source)
+console.log(essai2)
+console.log(essai2[2].photo)
+console.log(essai2[2].source)
 var test23 = JSON.stringify(test22);
 valeurs2 = transformation_text_json_to_table(test23);
 ajout_images(valeurs2,essai2);
