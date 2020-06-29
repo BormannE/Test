@@ -525,7 +525,12 @@ oReq2.send();
 //fonction qui ajoute les images
 function ajout_images(valeurs2,essai2)
 {
-  console.log(essai2)
+  var valeurs4 = new Array();
+  for(let j=0; j<essai2.length;j++)
+  {
+    valeurs4[j] = essaie2[j].source
+  }
+  console.log(valeurs4[j])
   var elt2 = document.createElement("div");
     elt2.setAttribute("id","deuxieme");
     document.getElementById("slideshow").appendChild(elt2);
@@ -541,7 +546,7 @@ function ajout_images(valeurs2,essai2)
         var elt1 = document.createElement("a");
         elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
       }
-      else if (essai2[h].source != undefined)
+      else if (essai2[h].source === undefined)
       {
         var elt1 = document.createElement("a");
         elt1.setAttribute("href",essai2[h].source);
