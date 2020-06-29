@@ -483,13 +483,13 @@ var test42 = XLSX.utils.sheet_to_json(worksheet2, {
     raw: true
 });
 var test22 = (JSON.stringify(test42,null,2));
-var essai = JSON.parse(test22)
+var essai2 = JSON.parse(test22)
 console.log(essai)
 console.log(essai[2].photo)
 console.log(essai[2].source)
 var test23 = JSON.stringify(test22);
 valeurs2 = transformation_text_json_to_table(test23);
-ajout_images(valeurs2,essai);
+ajout_images(valeurs2,essai2);
 var slides = document.getElementsByClassName("mySlides");
 carousel(slides);
 }
@@ -523,8 +523,9 @@ function transformation_text_json_to_table(test23)
 oReq2.send();
 
 //fonction qui ajoute les images
-function ajout_images(valeurs2,essai)
+function ajout_images(valeurs2,essai2)
 {
+  console.log(essai2)
   var elt2 = document.createElement("div");
     elt2.setAttribute("id","deuxieme");
     document.getElementById("slideshow").appendChild(elt2);
@@ -540,7 +541,7 @@ function ajout_images(valeurs2,essai)
         var elt1 = document.createElement("a");
         elt1.setAttribute("href","file:///\\vsm-file-1\srv_files\DP_Maintenance\Monitorat    JHe");
       }
-      else if (essai[h].source != undefined)
+      else if (essai2[h].source != undefined)
       {
         var elt1 = document.createElement("a");
         elt1.setAttribute("href",essai[h].source);
